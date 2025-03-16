@@ -34,8 +34,6 @@
   display: flex;
   align-items: center; /* Keep items vertically aligned */
   gap: 25px;
-  margin-left: auto;
-  padding-right: 40;
 }
 
 .nav a {
@@ -168,7 +166,7 @@
 
 /* Mobile Call to Action Button */
 .mobileCtaButton {
-  padding: 20px 80px;
+  padding: 20px 30px;
   background-color: var(--primary);
   color: white;
   font-weight: bold;

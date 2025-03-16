@@ -7,16 +7,13 @@ import LogoCarousel from "@/components/LogoCarousel";
 import ElfsightWidget from "@/components/ElfSightGoogle";
 import MovieViewingComponent from "@/components/MovieComponent";
 import FAQSection from "@/components/FAQSection";
-import TitleSection from "@/components/TitleSection";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <Hero />
-        <TitleSection 
-          title="Premium Top Brands" 
-        />
+      
         <LogoCarousel />
 
         <MovieViewingComponent videoId="ZsGwmoubqqE" title="Watch Our Promo" />

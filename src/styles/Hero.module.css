@@ -51,17 +51,17 @@
   }
   
   .primaryButton {
-    background-color: var(--primary);
+    background-color: var(--secondary);
     color: white;
   }
   
   .primaryButton:hover {
-    background-color: var(--secondary);
+    background-color: var(--tertiary);
   }
   
   .secondaryButton {
     background-color: transparent;
-    border: 2px solid var(--primary);
+    border: 2px solid var(--text-button);
     color: var(--text-button);
   }
   

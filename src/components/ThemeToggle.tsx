@@ -23,7 +23,7 @@ const ThemeToggle: React.FC = () => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        opacity: "0.7",
+        opacity: "0.5",
         padding: "10px",
         borderRadius: "20%",
         background: hovered

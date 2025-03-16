@@ -65,8 +65,9 @@ const Header: React.FC = () => {
         </nav>
 
         {/* Mobile CTA Button (Only on Mobile) */}
-        <Link href="/signup" className={styles.mobileCtaButton} onClick={() => setMenuOpen(false)}>
-          Sign Up
+        <Link href="/signup" className={styles.mobileCtaButton}>
+        <FaClipboard style={{ marginRight: "8px" }} />
+        Get a Quick Quote
         </Link>
           <div className={styles.mobileExtras}>
           <ThemeToggle />
