@@ -18,8 +18,8 @@ const Header: React.FC = () => {
           <Image 
             src="/images/logo.png" 
             alt="Company Logo" 
-            width={180}  
-            height={60}  
+            width={70}  
+            height={50}  
             priority  
             className={styles.logoImg} 
           />

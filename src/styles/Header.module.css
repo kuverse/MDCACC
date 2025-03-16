@@ -4,21 +4,29 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background: var(--background);
-  color: var(--foreground);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 100;
+
+  /* Semi-transparent background */
+  background: rgba(255, 255, 255, 0.1); /* Light mode example */
+  backdrop-filter: blur(5px); /* Optional: adds blur effect */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+
 /* Logo */
-.logo img {
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
   width: auto;
-  height: 80px;
-  object-fit: contain;
+  height: 50px; /* Default height (desktop) */
+  transition: all 0.3s ease-in-out;
 }
 
 /* Desktop Navigation */
@@ -50,7 +58,7 @@
 
 /* Call to Action Button (Desktop) */
 .ctaButton {
-  padding: 12px 35px;
+  padding: 14px 50px;
   background-color: var(--primary);
   color: white;
   font-weight: bold;
@@ -209,6 +217,15 @@
   }
   .menuButton {
       display: block;
+  }
+  .logo {
+    justify-content: center; /* Center the logo */
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .logoImg {
+    height: 100px; /* Enlarged logo height on mobile */
   }
   
 }

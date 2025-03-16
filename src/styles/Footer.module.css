@@ -26,7 +26,15 @@
     width: auto;
     height: 200px;
     object-fit: contain;
+    filter: invert(0%); /* Default: black logo */
+    transition: filter 0.3s ease;
   }
+  
+  /* Dark Mode */
+  .dark .logo img {
+    filter: invert(100%); /* White logo in dark mode */
+  }
+  
   
   .description {
     max-width: 400px;
@@ -97,7 +105,7 @@
   }
   
   .copyText {
-    font-size: 12px;
+    font-size: 14px;
   }
   
   .locationRow {

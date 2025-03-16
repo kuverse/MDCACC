@@ -1,0 +1,40 @@
+/* styles/GoogleReviews.module.css */
+
+.googleReviews {
+    margin: 20px 0;
+    text-align: center;
+  }
+  .googleLogo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .reviewLink {
+    text-decoration: none;
+    color: var(--foreground);
+    display: inline-block;
+  }
+  
+  .reviewsRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
+  
+  .starsRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 8px;
+  }
+  
+  .ratingText {
+    margin-left: 8px;
+    font-weight: bold;
+    color: var(--foreground);
+  }
+  
