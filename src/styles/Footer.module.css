@@ -1,0 +1,139 @@
+/* Upper Footer */
+.upperFooter {
+    background-color: var(--background);
+    color: var(--foreground);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  /* Each block styling */
+  .logoBlock,
+  .descriptionBlock,
+  .mapBlock,
+  .hoursBlock,
+  .socialIconsBlock {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo img {
+    width: auto;
+    height: 200px;
+    object-fit: contain;
+  }
+  
+  .description {
+    max-width: 400px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .quickMenu a {
+    color: var(--foreground);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .quickMenu a:hover {
+    color: var(--primary);
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 25px;
+  }
+  
+  .socialIcons a {
+    color: var(--foreground);
+    font-size: 30px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .socialIcons a:hover {
+    color: var(--primary);
+  }
+  
+  .hoursBlock p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .mapBlock iframe {
+    border-radius: 8px;
+    width: 320px;
+    height: 190px;
+
+  }
+  
+  /* Bottom Footer */
+  .bottomFooter {
+    background-color: var(--tertiary);
+    color: var(--foreground);
+    text-align: center;
+    padding: 15px 10px;
+  }
+  
+  .bottomLinks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .bottomLinks a {
+    color: var(--foreground);
+    font-size: 13px;
+    text-decoration: none;
+  }
+  
+  .bottomLinks a:hover {
+    color: var(--primary);
+  }
+  
+  .copyText {
+    font-size: 12px;
+  }
+  
+  .locationRow {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* space between icon and text */
+    justify-content: center; /* center in mobile, adjust if needed for desktop */
+  }
+  
+  .locationIcon {
+    font-size: 20px;
+    color: var(--primary); /* Match your brand color */
+  }
+  
+
+  /* Desktop Layout */
+  @media (min-width: 768px) {
+    .upperFooter {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: left;
+      gap: 30px;
+    }
+  
+    .logoBlock,
+    .descriptionBlock,
+    .mapBlock,
+    .hoursBlock,
+    .socialIconsBlock {
+      align-items: flex-start;
+    }
+  
+    .mapBlock iframe {
+      width: 200px;
+      height: 150px;
+    }
+  }
+  

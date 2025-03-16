@@ -1,0 +1,214 @@
+/* Header Container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: var(--background);
+  color: var(--foreground);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/* Logo */
+.logo img {
+  width: auto;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Desktop Navigation */
+.nav {
+  display: flex;
+  align-items: center; /* Keep items vertically aligned */
+  gap: 25px;
+  margin-left: auto;
+  padding-right: 40; /* Push the navigation to the right */
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--foreground);
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+/* Desktop Call to Action & Theme Toggle */
+.desktopActions {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between Theme Toggle and Sign-Up Button */
+}
+
+/* Call to Action Button (Desktop) */
+.ctaButton {
+  padding: 12px 35px;
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+  font-size: 14px;
+  width: auto;
+  min-width: 100px;
+  text-align: center;
+}
+
+.ctaButton:hover {
+  background-color: var(--secondary);
+}
+
+
+
+
+
+/* Mobile Menu Button */
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--foreground);
+}
+
+/* Mobile Menu Overlay */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 250px;
+  height: 100vh;
+  background: var(--tertiary);
+  color: var(--foreground);
+  transition: right 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+
+/* Mobile Menu Animation */
+@keyframes bounceInRight {
+  0% {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  60% {
+      transform: translateX(-10%);
+      opacity: 1;
+  }
+  80% {
+      transform: translateX(3%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+/* Show Mobile Menu */
+.mobileMenu.show {
+  right: 0;
+  animation: bounceInRight 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Close Button */
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--foreground);
+  font-size: 24px;
+  padding: 10px;
+}
+
+/* Mobile Navigation Links */
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.mobileNav a {
+  text-decoration: none;
+  color: var(--foreground);
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.mobileNav a:hover {
+  color: var(--primary);
+}
+
+/* Mobile Call to Action Button */
+.mobileCtaButton {
+  padding: 20px 80px;
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+  margin-top: auto;
+  margin-bottom: 30px;
+  width: fit-content;
+  text-align: center;
+  font-size: 14px;
+}
+
+.mobileCtaButton:hover {
+  background-color:var(--secondary);
+}
+
+/* Section for Additional Links & Theme Toggle */
+.mobileExtras {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  gap: 10px;
+}
+
+/* Extra Links */
+.extraLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  margin-top: 10;
+}
+
+.extraLinks a:hover {
+  color: var(--primary);
+}
+
+/* Hide Desktop Call to Action & Theme Toggle on Mobile */
+@media (max-width: 768px) {
+  .nav, .desktopActions {
+      display: none;
+  }
+  .menuButton {
+      display: block;
+  }
+  
+}
