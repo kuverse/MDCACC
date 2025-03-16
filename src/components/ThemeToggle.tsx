@@ -7,30 +7,43 @@ import { Sun, Moon } from "lucide-react";
 const ThemeToggle: React.FC = () => {
   const { theme, setTheme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [hovered, setHovered] = useState(false); // Hover state
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null; // Prevents hydration mismatch
+  if (!mounted) return null;
 
-  // Detect system theme if theme is "system"
   const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (
     <button
       onClick={() => setTheme(currentTheme === "light" ? "dark" : "light")}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       style={{
+        opacity: "0.7",
         padding: "10px",
         borderRadius: "20%",
-        background: currentTheme === "light" ? "#f0f0f0" : "#333",
+        background: hovered
+          ? currentTheme === "light"
+            ? "#bbbbbb"
+            : "#666666"
+          : currentTheme === "light"
+          ? "#dddddd"
+          : "#444444",
         color: currentTheme === "light" ? "#333" : "#f0f0f0",
         border: "none",
         cursor: "pointer",
         transition: "background 0.3s ease, color 0.3s ease",
       }}
     >
-      {currentTheme === "dark" ? <Sun size={20} color="white"/> : <Moon size={20} color="black"/>}
+      {currentTheme === "dark" ? (
+        <Sun size={20} color="white" />
+      ) : (
+        <Moon size={20} color="black" />
+      )}
     </button>
   );
 };

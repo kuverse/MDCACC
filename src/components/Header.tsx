@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react"; // Icons
 import Image from "next/image";
 import styles from "../styles/Header.module.css"; // Import styles
 import ThemeToggle from "./ThemeToggle";
+import { FaClipboard } from "react-icons/fa";
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -38,9 +39,11 @@ const Header: React.FC = () => {
       <div className={styles.desktopActions}>
         <ThemeToggle />
         <Link href="/signup" className={styles.ctaButton}>
-          Sign Up
+        <FaClipboard style={{ marginRight: "8px" }} />
+        Get a Quick Quote
         </Link>
       </div>
+
 
       {/* Mobile Menu Button */}
       <button className={styles.menuButton} onClick={() => setMenuOpen(!menuOpen)}>

@@ -4,8 +4,10 @@
   --primary: #E3000A; /* Main Brand Color */
   --secondary: #27A7E0; /* Accent Color */
   --tertiary: #e9e9e9; /* Success/Highlight Color */
-  --border-color: #dddddd;
+  --border-color: #f2f2f2;
   --text-muted: #434343;
+  --text-button: #E3000A;
+
 }
 
 .dark {
@@ -14,16 +16,23 @@
   --primary: #E3000A; /* Adjusted for dark mode */
   --secondary: #2cc0ff; /* Darker accent */
   --tertiary: #1d1d1d; /* Dark success color */
-  --border-color: #444444;
+  --border-color: #4d4d4d;
   --text-muted: #ebebeb;
+  --text-button: #ffffff;
+
 }
 
 h1, h2, h3, .titleFont {
   font-family: 'InterFont', sans-serif;
 }
 
-p {
+h4 {
   font-family: 'InterFontThin', sans-serif;
+  color: var(--primary);
+}
+
+p {
+  font-family: 'InterFont', sans-serif;
 }
 
 html, body {

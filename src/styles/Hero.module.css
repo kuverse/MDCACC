@@ -16,7 +16,7 @@
   }
   
   .subtitle {
-    max-width: 600px;
+    max-width: 450px;
     margin: 0 auto 30px;
     font-size: 16px;
     line-height: 1.6;
@@ -33,12 +33,21 @@
     margin-top: 20px;
   }
   
+  @media (max-width: 768px) {
+    .ctaButtons {
+      flex-direction: column;
+      align-items: center; /* Centers them */
+    }
+  }
+
+
   .primaryButton, .secondaryButton {
-    padding: 12px 25px;
+    padding: 18px 20px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
     transition: background 0.3s ease;
+    min-width: 250px;
   }
   
   .primaryButton {
@@ -53,7 +62,7 @@
   .secondaryButton {
     background-color: transparent;
     border: 2px solid var(--primary);
-    color: var(--foreground);
+    color: var(--text-button);
   }
   
   .secondaryButton:hover {
@@ -61,7 +70,9 @@
     color: white;
   }
 
-
+.title {
+  margin-top: 80px;
+}
 
   .hero {
     position: relative;
@@ -92,6 +103,6 @@
     position: relative;
     z-index: 2;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
   }
   
