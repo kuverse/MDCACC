@@ -1,9 +1,10 @@
 import FAQItem from "./FAQ";
+import TitleSection from "./TitleSection";
 
 export default function FAQSection() {
   return (
-    <section style={{ maxWidth: "800px", margin: "50px auto" }}>
-      <h2 style={{ textAlign: "center", marginBottom: "30px" }}>Frequently Asked Questions</h2>
+    <section style={{ maxWidth: "800px", margin: "50px auto", padding: "0 20px" }}>
+      <TitleSection title="Frequently Asked Questions" subtitle="Have a Question?"/>
       
       <FAQItem 
         question="What services do you offer?" 

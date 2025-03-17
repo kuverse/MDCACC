@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "../styles/ServicesSection.module.css";
 import { FaLightbulb } from "react-icons/fa";
+import TitleSection from "./TitleSection";
 
 const serviceCards = [
   { img: "/images/service1.png", title: "TuffSkin® Marble Protection", subtitle: "Protect your marble countertops from almost anything." },
@@ -16,12 +17,12 @@ const serviceCards = [
 
 const ServicesSection: React.FC = () => {
   return (
+    
     <section className={styles.servicesSection}>
-        <div className={styles.imageWrapper}>
-              <Image src="/images/house-logo.png" alt="tint it pro" width={300} height={140} />
-            </div>
-      <h2 className={styles.mainTitle}>Our Solutions</h2>
-      <p className={styles.subtitle}>From windows to countertops, we got you covered.</p>
+  
+        <Image src="/images/house-logo.png" alt="tint it pro" width={300} height={140} />
+        <TitleSection title="Our Solutions" subtitle="From windows to countertops, we got you covered"/>
+       
 
       <div className={styles.cardContainer}>
         {serviceCards.map((card, index) => (
@@ -38,7 +39,7 @@ const ServicesSection: React.FC = () => {
             </div>
             <div className={styles.overlay}>
               <h1>{card.title}</h1>
-              <p style={{padding: "10px"}}>{card.subtitle}</p>
+              <p style={{padding: "10px", fontWeight: "100"}}>{card.subtitle}</p>
               <button className={styles.learnMore}>
                 <FaLightbulb style={{ marginRight: "8px" }} />
                 Learn More

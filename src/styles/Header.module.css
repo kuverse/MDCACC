@@ -70,10 +70,8 @@
 }
 
 .ctaButton:hover {
-  background-color: var(--secondary);
+  background-color: var(--border-color);
 }
-
-
 
 
 
@@ -181,7 +179,7 @@
 }
 
 .mobileCtaButton:hover {
-  background-color:var(--secondary);
+  background-color:var(--border-color);
 }
 
 /* Section for Additional Links & Theme Toggle */

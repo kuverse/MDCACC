@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import InfoTooltip from "./InfoTool";
 
 const filmTypes = [
   { type: "None", pricePerSqFt: 0 },
@@ -54,6 +55,7 @@ const EstimatorPro: React.FC = () => {
   ).toFixed(2);
 
   return (
+    <>
     <section
       style={{
         position: "relative",
@@ -117,9 +119,9 @@ const EstimatorPro: React.FC = () => {
             style={{
               display: "flex",
               flexDirection: "row",
-              gap: "20px",
+              gap: "22px",
               marginBottom: "20px",
-              marginRight: "26px",
+              marginRight: "27px",
               justifyContent: "center",
             }}
           >
@@ -137,6 +139,8 @@ const EstimatorPro: React.FC = () => {
                 borderRadius: "4px",
                 color: "#3D4143",
                 fontWeight: "bold",
+                backgroundColor: "white",
+
               }}
             />
 
@@ -152,6 +156,8 @@ const EstimatorPro: React.FC = () => {
                 width: "89px",
                 color: "#3D4143",
                 fontWeight: "bold",
+                backgroundColor: "white",
+
               }}
             />
 
@@ -168,6 +174,8 @@ const EstimatorPro: React.FC = () => {
                 marginLeft: "4px",
                 color: "#3D4143",
                 fontWeight: "bold",
+                backgroundColor: "white",
+
               }}
             />
 
@@ -183,6 +191,7 @@ const EstimatorPro: React.FC = () => {
                 marginRight: "29px",
                 color: "#3D4143",
                 fontWeight: "bold",
+                backgroundColor: "white",
               }}
             >
               {filmTypes.map((f) => (
@@ -220,38 +229,39 @@ const EstimatorPro: React.FC = () => {
         ))}
       </select>
       </div>
-
-   
-
-
-
       </div>
 
-      <button
-        style={{
-          position: "absolute",
-          right: "50px", // Adjust as needed
-          bottom: "2px", // Optional, adjust vertical position
-          background: "transparent",
-          border: "none",
-          padding: "0",
-          cursor: "pointer",
-          zIndex: 5,
-        }}
-        onClick={() => {
-          // Your desired button action here
-          console.log("Schedule button clicked");
-        }}
-      >
-        <Image
-          src="/images/schedule.png"
-          alt="Estimator Pro Schedule"
-          width={290}
-          height={110}
-        />
-      </button>
+
 
           </section>
+
+          <button
+            style={{
+              position: "absolute",
+              left: "50%", // Center horizontally
+              bottom: "35px", // Adjust vertical position
+              transform: "translateX(-50%)", // Perfect center
+              background: "transparent",
+              border: "none",
+              padding: "0",
+              cursor: "pointer",
+              zIndex: 5,
+            }}
+            onClick={() => {
+              console.log("Schedule button clicked");
+            }}
+          >
+            <Image
+              src="/images/schedule.png"
+              alt="Estimator Pro Schedule"
+              width={250}
+              height={90}
+            />
+          </button>
+
+          <InfoTooltip />
+
+        </>
         );
       };
 

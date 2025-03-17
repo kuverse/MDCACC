@@ -9,15 +9,15 @@ import MovieViewingComponent from "@/components/MovieComponent";
 import FAQSection from "@/components/FAQSection";
 import ServicesSection from "@/components/ServicesSection";
 import EstimatorPro from "@/components/EstimatorPro";
+import StreamBackground from "@/components/BackgroundDesign";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <Hero />
-      
-        <LogoCarousel />
 
+        <LogoCarousel />
         <MovieViewingComponent videoId="ZsGwmoubqqE" title="Watch Our Promo" />
 
         <div className={styles.cardContainer}>
@@ -37,12 +37,19 @@ export default function Home() {
             subtitle="Solar Gard® window films ensure superior quality and offer up to 82% heat rejection, 99% UV ray blocking, 90% glare reduction, interior fade control, and up to 30% energy cost savings."
           />
         </div>
-        <ServicesSection />
-        <div style={{padding: "10px", marginTop: "80px", marginBottom: "50px"}}>
-        <ElfsightWidget />
-        <EstimatorPro/>
+
+       
+          <ServicesSection />
+
+        <section style={{ position: "relative", zIndex: 0 }}>
+          <StreamBackground />
+          <div style={{ padding: "5px", marginTop: "30px", marginBottom: "0px" }}>
+            <ElfsightWidget />
+            <EstimatorPro />
+          </div>
+        </section>
         <FAQSection />
-        </div>
+
       </main>
     </div>
   );
