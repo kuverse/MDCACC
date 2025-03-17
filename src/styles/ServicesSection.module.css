@@ -1,0 +1,86 @@
+.servicesSection {
+    padding: 60px 5px;
+    text-align: center;
+  }
+  
+  .mainTitle {
+    font-size: 2.2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--primary);
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-family: 'InterFontThin', sans-serif;
+
+  }
+  
+  .cardContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px;
+    justify-items: center;
+  }
+  
+  .card {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px;
+  }
+  
+  .imageWrapper {
+    width: 100%;
+    height: auto;
+  }
+  
+  .cardImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 60; /* Anchor at the bottom */
+    left: 0;   /* Full width start */
+    right: 0;  /* Full width end */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    z-index: 2;
+    border-radius: 0px;
+    width: 100%; /* Full width */
+    text-align: center; /* Center the text */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  
+  .learnMore {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .learnMore:hover {
+    background-color: var(--primary);
+    font-size: 20px;
+  }
+  
+  /* Desktop: 3 cards per row */
+  @media (min-width: 900px) {
+    .cardContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
