@@ -10,7 +10,7 @@ const InfoTooltip: React.FC = () => {
     <div
       style={{
         position: "absolute", // keeps it static on screen
-        right: "1%",
+        right: "2%",
         top: "1px",
         zIndex: 1000,
         padding: "10px",

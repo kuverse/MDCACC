@@ -41,7 +41,7 @@
   
   .overlay {
     position: absolute;
-    bottom: 60px; /* Anchor at the bottom */
+    bottom: 40px; /* Anchor at the bottom */
     left: 0;   /* Full width start */
     right: 0;  /* Full width end */
     background-color: rgba(0, 0, 0, 0.5);
@@ -69,7 +69,8 @@
   
   .learnMore:hover {
     background-color: var(--primary);
-    font-size: 20px;
+    transform: scale(1.1);
+    font-weight: bold;
   }
   
   @media (min-width: 900px) {

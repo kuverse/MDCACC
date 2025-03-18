@@ -4,6 +4,7 @@
   --primary: #E3000A; /* Main Brand Color */
   --secondary: #27A7E0; /* Accent Color */
   --tertiary: #e9e9e9; /* Success/Highlight Color */
+  --quad: #444444;
   --border-color: #f2f2f2;
   --text-muted: #434343;
   --text-button: #E3000A;
@@ -13,9 +14,10 @@
 .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
-  --primary: #E3000A; /* Adjusted for dark mode */
+  --primary: #b80009; /* Adjusted for dark mode */
   --secondary: #2cc0ff; /* Darker accent */
   --tertiary: #1d1d1d; /* Dark success color */
+  --quad: #1d1d1d;
   --border-color: #4d4d4d;
   --text-muted: #ebebeb;
   --text-button: #ffffff;

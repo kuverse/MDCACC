@@ -8,7 +8,7 @@ interface MovieViewingComponentProps {
 const MovieViewingComponent: React.FC<MovieViewingComponentProps> = ({ videoId}) => {
   const outerContainer: React.CSSProperties = {
     width: "100%",
-    backgroundColor: "var(--tertiary)",
+    backgroundColor: "var(--primary)",
     padding: "50px 0", // Reduced padding for even spacing
     display: "flex",
     flexDirection: "column",
@@ -25,9 +25,8 @@ const MovieViewingComponent: React.FC<MovieViewingComponentProps> = ({ videoId})
     paddingBottom: "50.25%",
     height: 0,
     overflow: "hidden",
-    border: "6px solid #000",
+    border: "5px solid #fff",
     borderRadius: "12px",
-    backgroundColor: "#000",
   };
 
   const iframeStyle: React.CSSProperties = {

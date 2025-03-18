@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import InfoTooltip from "./InfoTool";
+import Link from "next/link";
 
 const filmTypes = [
   { type: "None", pricePerSqFt: 0 },
@@ -243,6 +244,8 @@ const EstimatorPro: React.FC = () => {
               </select>
             </div>
           </div>
+
+
           <button
           style={{
             position: "absolute",
@@ -259,8 +262,10 @@ const EstimatorPro: React.FC = () => {
             console.log("Schedule button clicked");
           }}
         >
+        <Link href="/booking">
 
           <Image src="/images/schedule.png" alt="Estimator Pro Schedule" width={350} height={130} />
+          </Link>
         </button>
         </section>
 
@@ -280,7 +285,7 @@ const EstimatorPro: React.FC = () => {
 
         @media (max-width: 768px) {
           .estimator-wrapper {
-            transform: scale(0.68);
+            transform: scale(0.65);
             display: flex;
             justify-content: center;
             align-items: center;

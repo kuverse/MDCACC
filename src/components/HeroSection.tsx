@@ -57,8 +57,6 @@ const Hero = () => {
                 ® </span>marble protection.
         </p>
 
-
-
         <GoogleReviews />
 
         <div className={styles.ctaButtons}>

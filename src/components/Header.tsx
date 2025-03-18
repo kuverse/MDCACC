@@ -29,20 +29,20 @@ const Header: React.FC = () => {
 
       {/* Desktop Navigation */}
       <nav className={styles.nav}>
-      <Link href="#home">Home</Link>
-        <Link href="#solutions">Solutions</Link>
-        <Link href="#reviews">Reviews</Link>
-        <Link href="#estimator">Estimator Pro</Link>
-        <Link href="#faq">FAQ</Link>
+      <Link href="/#home">Home</Link>
+        <Link href="/#solutions">Solutions</Link>
+        <Link href="/#reviews">Reviews</Link>
+        <Link href="/#estimator">Estimator Pro</Link>
+        <Link href="/#faq">FAQ</Link>
       </nav>
 
       {/* Desktop Call to Action Button & Theme Toggle (Hidden on Mobile) */}
       <div className={styles.desktopActions}>
         <ThemeToggle />
-        <Link href="#estimator" className={styles.ctaButton}>
+        <Link href="/booking" className={styles.ctaButton}>
         
         <FaClipboard style={{ marginRight: "8px" }} />
-        Get a Quick Quote
+        Schedule a Visit
         </Link>
       </div>
 
@@ -63,11 +63,11 @@ const Header: React.FC = () => {
         
         {/* Mobile Navigation */}
         <nav className={styles.mobileNav}>
-        <Link href="#home" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link href="#solutions" onClick={() => setMenuOpen(false)}>Solutions</Link>
-          <Link href="#reviews" onClick={() => setMenuOpen(false)}>Reviews</Link>
-          <Link href="#estimator" onClick={() => setMenuOpen(false)}>Estimator Pro</Link>
-          <Link href="#faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
+        <Link href="/#home" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link href="/#solutions" onClick={() => setMenuOpen(false)}>Solutions</Link>
+          <Link href="/#reviews" onClick={() => setMenuOpen(false)}>Reviews</Link>
+          <Link href="/#estimator" onClick={() => setMenuOpen(false)}>Estimator Pro</Link>
+          <Link href="/#faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
         </nav>
 
         {/* Mobile CTA Button (Only on Mobile) */}

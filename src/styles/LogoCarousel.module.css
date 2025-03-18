@@ -1,7 +1,6 @@
 .carouselWrapper {
     overflow: hidden;
     width: 100%;
-    background-color: var(--background); /* Optional */
     padding: 40px 0;
   }
   
