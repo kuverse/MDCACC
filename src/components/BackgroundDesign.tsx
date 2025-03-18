@@ -6,6 +6,7 @@ const StreamBackground: React.FC = () => {
   return (
     
     <div
+    className="stream-background"
     style={{
       position: "absolute", // Fixed to viewport
       width: "100%",

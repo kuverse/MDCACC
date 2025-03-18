@@ -42,9 +42,10 @@ export default function Home() {
         <section style={{ position: "relative", zIndex: 0 }}>
           <StreamBackground />
           <EstimatorPro />
-        </section>
 
+        </section>
         <FAQSection />
+
 
       </main>
     </div>
