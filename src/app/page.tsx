@@ -15,7 +15,10 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+      <section id="home">
         <Hero />
+        </section>
+
         <LogoCarousel />
         <MovieViewingComponent videoId="ZsGwmoubqqE" title="Watch Our Promo" />
         <div className={styles.cardContainer}>
@@ -35,17 +38,22 @@ export default function Home() {
             subtitle="Solar Gard® window films ensure superior quality and offer up to 82% heat rejection, 99% UV ray blocking, 90% glare reduction, interior fade control, and up to 30% energy cost savings."
           />
         </div>
-        
-        <ServicesSection />
-        <ElfsightWidget />
 
-        <section style={{ position: "relative"}}>
+        <section id="solutions">
+        <ServicesSection />
+        </section>
+
+        <section id="reviews">
+        <ElfsightWidget />
+        </section>
+
+        <section id="estimator" style={{ position: "relative"}}>
           <StreamBackground />
           <EstimatorPro />
-
         </section>
+        <section id="faq">
         <FAQSection />
-
+        </section>
 
       </main>
     </div>

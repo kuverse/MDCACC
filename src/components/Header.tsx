@@ -29,10 +29,11 @@ const Header: React.FC = () => {
 
       {/* Desktop Navigation */}
       <nav className={styles.nav}>
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-        <Link href="/services">Services</Link>
-        <Link href="/contact">Contact</Link>
+      <Link href="#home">Home</Link>
+        <Link href="#solutions">Solutions</Link>
+        <Link href="#reviews">Reviews</Link>
+        <Link href="#estimator">Estimator Pro</Link>
+        <Link href="#faq">FAQ</Link>
       </nav>
 
       {/* Desktop Call to Action Button & Theme Toggle (Hidden on Mobile) */}
@@ -58,10 +59,11 @@ const Header: React.FC = () => {
         
         {/* Mobile Navigation */}
         <nav className={styles.mobileNav}>
-          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link href="/about" onClick={() => setMenuOpen(false)}>About</Link>
-          <Link href="/services" onClick={() => setMenuOpen(false)}>Services</Link>
-          <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+        <Link href="#home" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link href="#solutions" onClick={() => setMenuOpen(false)}>Solutions</Link>
+          <Link href="#reviews" onClick={() => setMenuOpen(false)}>Reviews</Link>
+          <Link href="#estimator" onClick={() => setMenuOpen(false)}>Estimator Pro</Link>
+          <Link href="#faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
         </nav>
 
         {/* Mobile CTA Button (Only on Mobile) */}
