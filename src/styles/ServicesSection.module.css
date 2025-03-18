@@ -54,7 +54,7 @@
   
   .overlay {
     position: absolute;
-    bottom: 60; /* Anchor at the bottom */
+    bottom: 60px; /* Anchor at the bottom */
     left: 0;   /* Full width start */
     right: 0;  /* Full width end */
     background-color: rgba(0, 0, 0, 0.5);
@@ -85,7 +85,6 @@
     font-size: 20px;
   }
   
-  /* Desktop: 3 cards per row */
   @media (min-width: 900px) {
     .cardContainer {
       grid-template-columns: repeat(2, 1fr);

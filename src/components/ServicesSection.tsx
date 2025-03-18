@@ -21,7 +21,7 @@ const ServicesSection: React.FC = () => {
     <section className={styles.servicesSection}>
   
         <Image src="/images/house-logo.png" alt="tint it pro" width={300} height={140} />
-        <TitleSection title="Our Solutions" subtitle="From windows to countertops, we got you covered"/>
+        <TitleSection title="Our Solutions" subtitle="From windows to countertops, we got you covered."/>
        
 
       <div className={styles.cardContainer}>

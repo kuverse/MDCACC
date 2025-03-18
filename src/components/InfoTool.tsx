@@ -13,7 +13,7 @@ const InfoTooltip: React.FC = () => {
         display: "flex",
         alignItems: "center",
         zIndex: 1000,
-
+        padding: "10px",
       }}
     >
       {/* Info Icon */}
