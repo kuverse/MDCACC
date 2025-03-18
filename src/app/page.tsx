@@ -39,7 +39,7 @@ export default function Home() {
         <ServicesSection />
         <ElfsightWidget />
 
-        <section style={{ position: "relative", zIndex: 0 }}>
+        <section style={{ position: "relative"}}>
           <StreamBackground />
           <EstimatorPro />
 

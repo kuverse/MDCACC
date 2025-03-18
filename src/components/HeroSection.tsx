@@ -28,7 +28,10 @@ const Hero = () => {
               textUnderlineOffset: "4px",
             }}
           >
+            <Link href="https://www.solargard.com/">
+
             SolarGard
+            </Link>
           </span>
           <span
             style={{
@@ -43,7 +46,10 @@ const Hero = () => {
               textUnderlineOffset: "4px",
             }}
           >
+            <Link href="https://www.tuffskin.com/">
+
             Tuffskin
+            </Link>
           </span>
           <span
             style={{

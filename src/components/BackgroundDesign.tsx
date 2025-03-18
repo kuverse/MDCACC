@@ -6,12 +6,11 @@ const StreamBackground: React.FC = () => {
   return (
     
     <div
-    className="stream-background"
     style={{
       position: "absolute", // Fixed to viewport
       width: "100%",
       height: "100%",
-      top: 0,
+      bottom: "180px",
       left: 0,
       pointerEvents: "none", // So it doesn't block clicks
       zIndex: -1, // Put above section background but behind content
@@ -20,7 +19,7 @@ const StreamBackground: React.FC = () => {
     <svg
       width="100%"
       height="100%"
-      viewBox="0 0 1440 220"
+      viewBox="0 0 1440 320"
       preserveAspectRatio="none"
     >
       <path
@@ -29,7 +28,7 @@ const StreamBackground: React.FC = () => {
         >
         <animate
           attributeName="d"
-          dur="10s"
+          dur="8s"
           repeatCount="indefinite"
           values="
             M0,160 C360,320 1080,0 1440,160 L1440,320 L0,320 Z;

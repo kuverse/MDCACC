@@ -1,22 +1,9 @@
 .servicesSection {
-    padding: 60px 5px;
+    padding: 55px 5px;
     text-align: center;
   }
   
-  .mainTitle {
-    font-size: 2.2rem;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: var(--primary);
-  }
-  
-  .subtitle {
-    font-size: 1rem;
-    color: var(--text-muted);
-    margin-bottom: 40px;
-    font-family: 'InterFontThin', sans-serif;
-    font-weight: 100;
-  }
+
   
   .cardContainer {
     display: grid;

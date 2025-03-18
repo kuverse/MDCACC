@@ -9,17 +9,18 @@ const InfoTooltip: React.FC = () => {
   return (
     <div
       style={{
-        position: "relative",
-        display: "flex",
-        alignItems: "center",
+        position: "fixed", // keeps it static on screen
+        right: "5%",
+        bottom: "50px",
         zIndex: 1000,
         padding: "10px",
+        boxSizing: "border-box",
       }}
     >
       {/* Info Icon */}
       <FaInfoCircle
         style={{
-          color: "#fff",
+          color: "#E3000A",
           fontSize: "35px",
           cursor: "pointer",
         }}
@@ -32,27 +33,28 @@ const InfoTooltip: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          bottom: "50px",
-          left: "35px",
+          bottom: "80px",
+          right: "30px", // slight tweak for spacing
           backgroundColor: "#E3000A",
           color: "#fff",
           padding: "12px",
           borderRadius: "8px",
-          maxWidth: "480px",
-          fontSize: "14px",
+          maxWidth: "580px",
+          width: "300px",
+          fontSize: "1.4rem",
           fontWeight: "bold",
           opacity: showInfo ? 1 : 0,
           transform: showInfo ? "translateY(0)" : "translateY(10px)",
           transition: "opacity 0.3s ease, transform 0.3s ease",
-          pointerEvents: showInfo ? "auto" : "none", // Prevent bubble from blocking clicks when hidden
-          zIndex: 1000,
+          pointerEvents: showInfo ? "auto" : "none",
+          zIndex: 1001, // one level above
         }}
       >
-        1. Enter the number of windows or stone counters tops.<br></br>
-        2. Add the dimensions in inches.<br></br>
-        3. Select the film type.<br></br>
-        4. Select if equipment is required to reach your windows.<br></br>
-        5. Estimator Pro will send your requirements automatically when you schedule an in person assessment.<br></br>
+        1. Enter the number of windows or stone counters tops.<br /><br></br>
+        2. Add the dimensions in inches.<br /><br></br>
+        3. Select the film type.<br /><br></br>
+        4. Select if equipment is required to reach your windows.<br /><br></br>
+        5. Schedule an in person assessment and Estimator Pro will send your requirements automatically.<br />
       </div>
     </div>
   );

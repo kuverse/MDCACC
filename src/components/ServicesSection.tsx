@@ -38,8 +38,8 @@ const ServicesSection: React.FC = () => {
               <Image src={card.img} alt={card.title} width={300} height={200} className={styles.cardImage} />
             </div>
             <div className={styles.overlay}>
-              <h1>{card.title}</h1>
-              <p style={{padding: "10px", fontWeight: "100"}}>{card.subtitle}</p>
+            <h1 style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)" }}>{card.title}</h1>
+            <p style={{padding: "10px", fontWeight: "100"}}>{card.subtitle}</p>
               <button className={styles.learnMore}>
                 <FaLightbulb style={{ marginRight: "8px" }} />
                 Learn More

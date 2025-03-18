@@ -21,9 +21,9 @@ const equipmentOptions = [
 ];
 
 interface WindowData {
-  numWindows: number;
-  length: number;
-  width: number;
+  numWindows: number | "";
+  length: number | "";
+  width: number | "";
   film: { type: string; pricePerSqFt: number };
 }
 
@@ -41,14 +41,23 @@ const EstimatorPro: React.FC = () => {
     if (field === "film") {
       updated[index][field] = filmTypes.find((f) => f.type === value)!;
     } else {
-      updated[index][field] = parseInt(value) || 0;
+      updated[index][field] = value === '' ? '' : parseInt(value);
     }
     setWindowData(updated);
   };
 
+  const sanitizeData = () => {
+    return windowData.map((row) => ({
+      numWindows: row.numWindows === '' ? 1 : row.numWindows,
+      length: row.length === '' ? 0 : row.length,
+      width: row.width === '' ? 0 : row.width,
+      film: row.film,
+    }));
+  };
+
   const totalCost = Math.max(
     349,
-    windowData.reduce((acc, row) => {
+    sanitizeData().reduce((acc, row) => {
       const areaSqInches = row.length * row.width;
       const areaSqFeet = areaSqInches / 144;
       return acc + areaSqFeet * row.numWindows * row.film.pricePerSqFt;
@@ -57,21 +66,20 @@ const EstimatorPro: React.FC = () => {
 
   return (
     <>
-      {/* Wrapper for scaling */}
       <div className="estimator-wrapper">
         <section
           style={{
             position: "relative",
             minWidth: "650px",
             height: "840px",
-
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             marginBottom: "100px",
           }}
         >
-          {/* Background Image */}
+          <InfoTooltip />
+
           <Image
             src="/images/estimator-pro.png"
             alt="Estimator Pro Background"
@@ -85,7 +93,6 @@ const EstimatorPro: React.FC = () => {
             }}
           />
 
-          {/* Overlay Content */}
           <div
             style={{
               position: "absolute",
@@ -96,7 +103,6 @@ const EstimatorPro: React.FC = () => {
               marginLeft: "35px",
             }}
           >
-            {/* Total Cost */}
             <h2
               style={{
                 fontSize: "1.5rem",
@@ -114,7 +120,6 @@ const EstimatorPro: React.FC = () => {
               Estimated Cost: ${totalCost}
             </h2>
 
-            {/* Input Rows */}
             {windowData.map((row, index) => (
               <div
                 key={index}
@@ -133,6 +138,9 @@ const EstimatorPro: React.FC = () => {
                   min={1}
                   value={row.numWindows}
                   onChange={(e) => handleInputChange(index, "numWindows", e.target.value)}
+                  onBlur={(e) => {
+                    if (e.target.value === '') handleInputChange(index, "numWindows", '1');
+                  }}
                   style={{
                     border: "transparent",
                     width: "48px",
@@ -150,6 +158,9 @@ const EstimatorPro: React.FC = () => {
                   type="number"
                   value={row.length}
                   onChange={(e) => handleInputChange(index, "length", e.target.value)}
+                  onBlur={(e) => {
+                    if (e.target.value === '') handleInputChange(index, "length", '0');
+                  }}
                   style={{
                     padding: "10px",
                     borderRadius: "4px",
@@ -166,6 +177,9 @@ const EstimatorPro: React.FC = () => {
                   type="number"
                   value={row.width}
                   onChange={(e) => handleInputChange(index, "width", e.target.value)}
+                  onBlur={(e) => {
+                    if (e.target.value === '') handleInputChange(index, "width", '0');
+                  }}
                   style={{
                     padding: "10px",
                     borderRadius: "4px",
@@ -235,7 +249,7 @@ const EstimatorPro: React.FC = () => {
           style={{
             position: "absolute",
             left: "50%",
-            bottom: "-50px",
+            bottom: "-40px",
             transform: "translateX(-50%)",
             background: "transparent",
             border: "none",
@@ -247,27 +261,26 @@ const EstimatorPro: React.FC = () => {
             console.log("Schedule button clicked");
           }}
         >
-          <Image src="/images/schedule.png" alt="Estimator Pro Schedule" width={290} height={110} />
+
+          <Image src="/images/schedule.png" alt="Estimator Pro Schedule" width={350} height={130} />
         </button>
       </div>
 
-      <InfoTooltip />
 
-      {/* Scaling styles */}
       <style jsx>{`
         .estimator-wrapper {
           transform: scale(1);
           transform-origin: top center;
-           display: flex;                
-          justify-content: center;     
+          display: flex;
+          justify-content: center;
           align-items: center;
         }
 
         @media (max-width: 768px) {
           .estimator-wrapper {
             transform: scale(0.75);
-             display: flex;           
-            justify-content: center;       
+            display: flex;
+            justify-content: center;
             align-items: center;
           }
         }
