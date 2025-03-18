@@ -235,7 +235,7 @@ const EstimatorPro: React.FC = () => {
           style={{
             position: "absolute",
             left: "50%",
-            bottom: "10px",
+            bottom: "0px",
             transform: "translateX(-50%)",
             background: "transparent",
             border: "none",

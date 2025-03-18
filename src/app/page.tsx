@@ -37,14 +37,13 @@ export default function Home() {
         </div>
         
         <ServicesSection />
+        <ElfsightWidget />
 
         <section style={{ position: "relative", zIndex: 0 }}>
           <StreamBackground />
-          <div style={{ padding: "0px", marginTop: "30px", marginBottom: "0px" }}>
-            <ElfsightWidget />
-            <EstimatorPro />
-          </div>
+          <EstimatorPro />
         </section>
+
         <FAQSection />
 
       </main>
