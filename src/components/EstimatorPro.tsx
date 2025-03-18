@@ -243,13 +243,11 @@ const EstimatorPro: React.FC = () => {
               </select>
             </div>
           </div>
-        </section>
-
-        <button
+          <button
           style={{
             position: "absolute",
             left: "50%",
-            bottom: "-40px",
+            bottom: "-140px",
             transform: "translateX(-50%)",
             background: "transparent",
             border: "none",
@@ -264,6 +262,9 @@ const EstimatorPro: React.FC = () => {
 
           <Image src="/images/schedule.png" alt="Estimator Pro Schedule" width={350} height={130} />
         </button>
+        </section>
+
+       
       </div>
 
 
@@ -274,14 +275,18 @@ const EstimatorPro: React.FC = () => {
           display: flex;
           justify-content: center;
           align-items: center;
+          margin-bottom: 100px;
         }
 
         @media (max-width: 768px) {
           .estimator-wrapper {
-            transform: scale(0.75);
+            transform: scale(0.68);
             display: flex;
             justify-content: center;
             align-items: center;
+            max-height: 630px;
+            margin-bottom: -30px;
+
           }
         }
       `}</style>

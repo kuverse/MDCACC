@@ -27,8 +27,9 @@ h1, h2, h3, .titleFont {
 }
 
 h4 {
-  font-family: 'InterFontThin', sans-serif;
-  color: var(--primary);
+  font-family: 'InterFont', sans-serif;
+  color: var(--secondary);
+  padding: 4px;
 }
 
 p {

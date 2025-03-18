@@ -20,7 +20,7 @@ const ServicesSection: React.FC = () => {
     
     <section className={styles.servicesSection}>
   
-        <Image src="/images/house-logo.png" alt="tint it pro" width={300} height={140} />
+        <Image src="/images/house-logo.png" alt="tint it pro" width={200} height={80} />
         <TitleSection title="Our Solutions" subtitle="From windows to countertops, we got you covered."/>
        
 

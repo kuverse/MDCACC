@@ -7,7 +7,6 @@ import { Sun, Moon } from "lucide-react";
 const ThemeToggle: React.FC = () => {
   const { theme, setTheme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [hovered, setHovered] = useState(false); // Hover state
 
   useEffect(() => {
     setMounted(true);
@@ -20,29 +19,20 @@ const ThemeToggle: React.FC = () => {
   return (
     <button
       onClick={() => setTheme(currentTheme === "light" ? "dark" : "light")}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
       style={{
-        opacity: "0.5",
-        padding: "10px",
-        borderRadius: "20%",
-        background: hovered
-          ? currentTheme === "light"
-            ? "#bbbbbb"
-            : "#666666"
-          : currentTheme === "light"
-          ? "#dddddd"
-          : "#444444",
-        color: currentTheme === "light" ? "#333" : "#f0f0f0",
+        background: "transparent", // No background
         border: "none",
         cursor: "pointer",
-        transition: "background 0.3s ease, color 0.3s ease",
+        padding: "10px", // Adjust if needed
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       {currentTheme === "dark" ? (
-        <Sun size={20} color="white" />
+        <Sun size={30} color="white" />
       ) : (
-        <Moon size={20} color="black" />
+        <Moon size={30} color="black" />
       )}
     </button>
   );

@@ -62,12 +62,12 @@ const Hero = () => {
         <GoogleReviews />
 
         <div className={styles.ctaButtons}>
-        <Link href="/quote" className={styles.primaryButton}>
+        <Link href="#estimator" className={styles.primaryButton}>
             <FaClipboard style={{ marginRight: "8px" }} />
             Get a Quick Quote
         </Link>
         
-        <Link href="/services" className={styles.secondaryButton}>
+        <Link href="/" className={styles.secondaryButton}>
             <FaPhoneAlt style={{ marginRight: "8px" }} />
             Text Us 403 470 1687
         </Link>

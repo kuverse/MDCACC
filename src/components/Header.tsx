@@ -39,7 +39,8 @@ const Header: React.FC = () => {
       {/* Desktop Call to Action Button & Theme Toggle (Hidden on Mobile) */}
       <div className={styles.desktopActions}>
         <ThemeToggle />
-        <Link href="/signup" className={styles.ctaButton}>
+        <Link href="#estimator" className={styles.ctaButton}>
+        
         <FaClipboard style={{ marginRight: "8px" }} />
         Get a Quick Quote
         </Link>
@@ -47,9 +48,12 @@ const Header: React.FC = () => {
 
 
       {/* Mobile Menu Button */}
-      <button className={styles.menuButton} onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? <X size={28} /> : <Menu size={28} />}
-      </button>
+      <div className={styles.mobileActions}>
+  <ThemeToggle />
+  <button className={styles.menuButton} onClick={() => setMenuOpen(!menuOpen)}>
+    {menuOpen ? <X size={28} /> : <Menu size={28} />}
+  </button>
+</div>
 
       {/* Mobile Menu Overlay */}
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.show : ""}`}>
@@ -72,7 +76,6 @@ const Header: React.FC = () => {
         Get a Quick Quote
         </Link>
           <div className={styles.mobileExtras}>
-          <ThemeToggle />
         <div className={styles.extraLinks}>
             <Link href="/privacy" onClick={() => setMenuOpen(false)}>Privacy Policy</Link>
             <Link href="/terms" onClick={() => setMenuOpen(false)}>Terms of Service</Link>

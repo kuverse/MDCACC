@@ -20,8 +20,11 @@
 /* Logo */
 .logo {
   display: flex;
+  margin: 0; /* Remove auto-centering */
+  margin-right: auto; /* Push everything else right */
   align-items: center;
 }
+
 
 .logoImg {
   width: auto;
@@ -34,6 +37,7 @@
   display: flex;
   align-items: center; /* Keep items vertically aligned */
   gap: 25px;
+  margin-right: 30px;
 }
 
 .nav a {
@@ -206,6 +210,14 @@
   color: var(--primary);
 }
 
+.mobileActions {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Space between toggle & menu */
+  position: absolute;
+  right: 10px;
+}
+
 /* Hide Desktop Call to Action & Theme Toggle on Mobile */
 @media (max-width: 768px) {
   .nav, .desktopActions {
@@ -224,4 +236,9 @@
     height: 100px; /* Enlarged logo height on mobile */
   }
   
+}
+@media (min-width: 768px) {
+  .mobileActions {
+    display: none;
+  }
 }

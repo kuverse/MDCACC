@@ -40,6 +40,8 @@ export default function Home() {
         </div>
 
         <section id="solutions">
+     
+
         <ServicesSection />
         </section>
 
@@ -48,10 +50,13 @@ export default function Home() {
         </section>
 
         <section id="estimator" style={{ position: "relative"}}>
-          <StreamBackground />
+          <StreamBackground position="bottom" height="1000px"/>
+
           <EstimatorPro />
         </section>
-        <section id="faq">
+        <section id="faq" style={{ position: "relative"}}>
+        <StreamBackground position="top" height="100px"/>
+
         <FAQSection />
         </section>
 

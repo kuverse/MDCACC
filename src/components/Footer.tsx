@@ -69,8 +69,8 @@ const Footer = () => {
       {/* Bottom Section */}
       <div className={styles.bottomFooter}>
         <div className={styles.bottomLinks}>
-          <Link href="/privacy">Privacy Policy</Link>
-          <Link href="/terms">Terms of Service</Link>
+          <Link href="https://policies.google.com/privacy">Privacy Policy</Link>
+          <Link href="https://policies.google.com/terms">Terms of Service</Link>
         </div>
         <p className={styles.copyText}>Tint It Pro © 2025. All Rights Reserved.</p>
       </div>

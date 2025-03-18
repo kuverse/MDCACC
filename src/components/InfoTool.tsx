@@ -9,9 +9,9 @@ const InfoTooltip: React.FC = () => {
   return (
     <div
       style={{
-        position: "fixed", // keeps it static on screen
-        right: "5%",
-        bottom: "50px",
+        position: "absolute", // keeps it static on screen
+        right: "1%",
+        top: "1px",
         zIndex: 1000,
         padding: "10px",
         boxSizing: "border-box",
@@ -33,15 +33,15 @@ const InfoTooltip: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          bottom: "80px",
+          top: "90px",
           right: "30px", // slight tweak for spacing
           backgroundColor: "#E3000A",
           color: "#fff",
           padding: "12px",
           borderRadius: "8px",
-          maxWidth: "580px",
-          width: "300px",
-          fontSize: "1.4rem",
+          maxWidth: "680px",
+          width: "550px",
+          fontSize: "1.2rem",
           fontWeight: "bold",
           opacity: showInfo ? 1 : 0,
           transform: showInfo ? "translateY(0)" : "translateY(10px)",
@@ -50,11 +50,12 @@ const InfoTooltip: React.FC = () => {
           zIndex: 1001, // one level above
         }}
       >
-        1. Enter the number of windows or stone counters tops.<br /><br></br>
-        2. Add the dimensions in inches.<br /><br></br>
-        3. Select the film type.<br /><br></br>
+        1. Enter the number of windows or stone counters tops to be tinted or protected.<br /><br></br>
+        2. Add the length and width dimensions in inches.<br /><br></br>
+        3. Choose the film type you want.<br /><br></br>
         4. Select if equipment is required to reach your windows.<br /><br></br>
-        5. Schedule an in person assessment and Estimator Pro will send your requirements automatically.<br />
+        5. Press schedule a visit to choose a date and time for an in person assessment.<br></br><br></br>
+        Estimator Pro will send your requirements automatically during scheduling.<br />
       </div>
     </div>
   );

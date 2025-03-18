@@ -8,8 +8,8 @@ const ElfsightWidget = () => {
     <div
       style={{
         borderTop: "1px solid #ccc",
-        borderBottom: "1px solid #ccc",
-        marginBottom: "50px",
+        marginBottom: "100px",
+        padding: "50px",
       }}
     >
       <div

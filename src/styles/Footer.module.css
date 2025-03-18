@@ -1,6 +1,6 @@
 /* Upper Footer */
 .upperFooter {
-    background-color: var(--border-color);
+    background-color: var(--tertiary);
     color: var(--foreground);
     padding: 40px 20px;
     display: flex;
@@ -28,6 +28,7 @@
     object-fit: contain;
     filter: invert(0%); /* Default: black logo */
     transition: filter 0.3s ease;
+    padding: 1px;
   }
   
   /* Dark Mode */
@@ -40,17 +41,9 @@
     max-width: 350px;
     font-size: 14px;
     line-height: 1.6;
+    padding: 10px;min-width: 200px;
   }
   
-  .quickMenu a {
-    color: var(--foreground);
-    text-decoration: none;
-    font-weight: 500;
-  }
-  
-  .quickMenu a:hover {
-    color: var(--primary);
-  }
   
   .socialIcons {
     display: flex;
@@ -70,6 +63,7 @@
   .hoursBlock p {
     margin: 0;
     font-size: 14px;
+    min-width: 200px;
   }
   
   .mapBlock iframe {
@@ -81,7 +75,7 @@
   
   /* Bottom Footer */
   .bottomFooter {
-    background-color: #1d1d1d;
+    background-color: #E3000A;
     color: var(--foreground);
     text-align: center;
     padding: 15px 10px;
@@ -96,12 +90,13 @@
   
   .bottomLinks a {
     color: white;
-    font-size: 13px;
+    font-size: 14px;
     text-decoration: none;
   }
   
   .bottomLinks a:hover {
-    color: var(--primary);
+    font-weight: bold;
+    font-size: 15px;
   }
   
   .copyText {
@@ -118,7 +113,7 @@
   
   .locationIcon {
     font-size: 20px;
-    color: var(--primary); /* Match your brand color */
+    color: var(--secondary); /* Match your brand color */
   }
   
 

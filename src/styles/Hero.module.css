@@ -58,6 +58,7 @@
   
   .primaryButton:hover {
     background-color: var(--tertiary);
+    transform: scale(1.1); /* Increase size */
   }
   
   @keyframes wiggle {
@@ -77,6 +78,7 @@
   .secondaryButton:hover {
     background-color: var(--primary);
     color: white;
+    transform: scale(1.1); /* Increase size */
   }
 
 .title {
