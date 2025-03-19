@@ -44,9 +44,11 @@ const EstimatorPro: React.FC = () => {
 
 
   const handleBookingClick = () => {
-    const estimatorData = windowData.map((row, index) => (
-      `Row ${index + 1}: ${row.numWindows} windows, ${row.length}in x ${row.width}in, Film: ${row.film.type}`
-    )).join(" | ");
+    const estimatorData = windowData.map((row, index) => {
+      const label = String.fromCharCode(65 + index); // A, B, C, etc.
+      return `${label}: ${row.numWindows} ${row.film.type} - ${row.length}in x ${row.width}in`;
+    }).join(" || ");
+    
   
     const equipment = `${selectedEquipment.type}`;
   
