@@ -29,13 +29,14 @@ const ServicesSection: React.FC = () => {
       <div className={styles.cardContainer}>
         {serviceCards.map((card, index) => (
           <motion.div
-            className={styles.card}
-            key={index}
-            initial={{ x: index % 2 === 0 ? -200 : 200, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: index * 0.3 }}
-            viewport={{ once: true }}
-          >
+              className={styles.card}
+              key={index}
+              initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0, scale: 0.95 }}
+              whileInView={{ x: 0, opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.2 }} // Starts animation earlier
+            >
+        
             <div className={styles.imageWrapper}>
               <Image src={card.img} alt={card.title} width={300} height={200} className={styles.cardImage} />
             </div>
