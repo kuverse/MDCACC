@@ -54,7 +54,7 @@ export default function Home() {
 
           <EstimatorPro />
         </section>
-        <section id="faq" style={{ position: "relative"}}>
+        <section id="faq" style={{ position: "relative",  marginTop: "-5px" }}>
         <StreamBackground position="top" height="100px"/>
 
         <FAQSection />
