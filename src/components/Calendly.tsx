@@ -23,7 +23,6 @@ const CalendlyInlineWidget: React.FC = () => {
     const calendlyUrl = `https://calendly.com/tinterpro/45min?a1=${encodeURIComponent(a1)}&a2=${encodeURIComponent(a2)}`;
 
     if (widgetRef.current && window.Calendly) {
-      // Call Calendly's initInlineWidget
       window.Calendly.initInlineWidget({
         url: calendlyUrl,
         parentElement: widgetRef.current,
@@ -55,20 +54,6 @@ const CalendlyInlineWidget: React.FC = () => {
       <Script
         src="https://assets.calendly.com/assets/external/widget.js"
         strategy="afterInteractive"
-        onLoad={() => {
-          const a1 = searchParams.get("a1") || "";
-          const a2 = searchParams.get("a2") || "";
-
-          const calendlyUrl = `https://calendly.com/tinterpro/45min?a1=${encodeURIComponent(a1)}&a2=${encodeURIComponent(a2)}`;
-
-          if (widgetRef.current && window.Calendly) {
-            // Initialize Calendly after script loads
-            window.Calendly.initInlineWidget({
-              url: calendlyUrl,
-              parentElement: widgetRef.current,
-            });
-          }
-        }}
       />
     </div>
   );

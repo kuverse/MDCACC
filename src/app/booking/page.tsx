@@ -1,15 +1,14 @@
-// /app/booking/page.tsx
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import CalendlyInlineWidget from "@/components/Calendly";
 
 const BookingPage: React.FC = () => {
-
   return (
     <main style={{ padding: "50px", textAlign: "center" }}>
-      <CalendlyInlineWidget />
-
+      <Suspense fallback={<div>Loading Booking Widget...</div>}>
+        <CalendlyInlineWidget />
+      </Suspense>
     </main>
   );
 };
