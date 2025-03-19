@@ -49,6 +49,8 @@
 
 .nav a:hover {
   color: var(--primary);
+  transform: scale(1.1);
+
 }
 
 /* Desktop Call to Action & Theme Toggle */
@@ -75,6 +77,8 @@
 
 .ctaButton:hover {
   background-color: var(--border-color);
+  transform: scale(1.1);
+  
 }
 
 
@@ -164,6 +168,8 @@
 
 .mobileNav a:hover {
   color: var(--primary);
+  transform: scale(1.1);
+
 }
 
 /* Mobile Call to Action Button */
@@ -184,6 +190,8 @@
 
 .mobileCtaButton:hover {
   background-color:var(--border-color);
+  transform: scale(1.1);
+
 }
 
 /* Section for Additional Links & Theme Toggle */

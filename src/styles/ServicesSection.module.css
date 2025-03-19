@@ -20,6 +20,8 @@
     position: relative;
     overflow: hidden;
     border-radius: 0px;
+    will-change: transform, opacity;
+
   }
   .card p {
     padding: 10px;

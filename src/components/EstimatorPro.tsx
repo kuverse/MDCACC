@@ -50,7 +50,7 @@ const EstimatorPro: React.FC = () => {
     }).join(" || ");
     
   
-    const equipment = `${selectedEquipment.type}`;
+    const equipment = ` || ${selectedEquipment.type} ||`;
   
     const queryParams = new URLSearchParams({
       a1: estimatorData,
