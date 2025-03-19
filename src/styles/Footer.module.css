@@ -78,7 +78,7 @@
     background-color: #E3000A;
     color: var(--foreground);
     text-align: center;
-    padding: 15px 10px;
+    padding: 12px 10px;
   }
   
   .bottomLinks {
@@ -90,17 +90,17 @@
   
   .bottomLinks a {
     color: white;
-    font-size: 14px;
+    font-size: 12px;
     text-decoration: none;
   }
   
   .bottomLinks a:hover {
     font-weight: bold;
-    font-size: 15px;
+    font-size: 14px;
   }
   
   .copyText {
-    font-size: 14px;
+    font-size: 12px;
     color: white;
   }
   
