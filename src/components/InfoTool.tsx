@@ -37,7 +37,7 @@ const InfoTooltip: React.FC = () => {
           right: "30px", // slight tweak for spacing
           backgroundColor: "#E3000A",
           color: "#fff",
-          padding: "12px",
+          padding: "20px",
           borderRadius: "8px",
           maxWidth: "680px",
           width: "550px",
@@ -55,7 +55,6 @@ const InfoTooltip: React.FC = () => {
         3. Choose the film type you want.<br /><br></br>
         4. Select if equipment is required to reach your windows.<br /><br></br>
         5. Press schedule a visit to choose a date and time for an in person assessment.<br></br><br></br>
-        Estimator Pro will send your requirements automatically during scheduling.<br />
       </div>
     </div>
   );

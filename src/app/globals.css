@@ -86,3 +86,20 @@ a {
   font-weight: bold;
   font-style: normal;
 }
+
+.scheduleButton {
+  position: absolute;
+  left: 50%;
+  bottom: -140px;
+  transform: translateX(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.scheduleButton:hover {
+  transform: translateX(-50%) scale(1.1); /* Slight scale effect on hover */
+}

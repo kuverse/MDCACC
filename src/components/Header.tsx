@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react"; // Icons
 import Image from "next/image";
 import styles from "../styles/Header.module.css"; // Import styles
 import ThemeToggle from "./ThemeToggle";
-import { FaClipboard } from "react-icons/fa";
+import { FaClipboard, FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -71,14 +71,21 @@ const Header: React.FC = () => {
         </nav>
 
         {/* Mobile CTA Button (Only on Mobile) */}
-        <Link href="/signup" className={styles.mobileCtaButton}>
+        <Link href="/booking" className={styles.mobileCtaButton}>
         <FaClipboard style={{ marginRight: "8px" }} />
-        Get a Quick Quote
+        Schedule a Visit
         </Link>
           <div className={styles.mobileExtras}>
-        <div className={styles.extraLinks}>
-            <Link href="/privacy" onClick={() => setMenuOpen(false)}>Privacy Policy</Link>
-            <Link href="/terms" onClick={() => setMenuOpen(false)}>Terms of Service</Link>
+        <div className={styles.socialIconsMobile}>
+            <a href="https://www.youtube.com/channel/UCxJ_WibdI_sia2RZ_wAIOMw" target="_blank" rel="noopener noreferrer">
+              <FaYoutube size={20}/>
+            </a>
+            <a href="https://instagram.com/tintitpro" target="_blank" rel="noopener noreferrer">
+              <FaInstagram size={20}/>
+            </a>
+            <a href="https://facebook.com/tintitpro" target="_blank" rel="noopener noreferrer">
+              <FaFacebookF size={20}/>
+            </a>
           </div>
         <p style={{ fontSize: "15px", marginTop: "auto", textAlign: "center", paddingBottom: "25px" }}>
             Tint It Pro ©2025

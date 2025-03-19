@@ -6,14 +6,16 @@ import Image from "next/image";
 import styles from "../styles/ServicesSection.module.css";
 import { FaLightbulb } from "react-icons/fa";
 import TitleSection from "./TitleSection";
+import Link from "next/link";
 
 const serviceCards = [
-  { img: "/images/service1.png", title: "TuffSkin® Marble Protection", subtitle: "Protect your marble countertops from almost anything." },
-  { img: "/images/service2.png", title: "Residential Window Tinting", subtitle: "Upgrade the style and energy efficiency of your home." },
-  { img: "/images/service3.png", title: "Commercial  Window Tinting", subtitle: "Drive Upgrade the style and energy efficiency of your commercial property." },
-  { img: "/images/service4.png", title: "Decorative & Privacy Films", subtitle: "Enhance your safety by adding protection to your windows with anti-shatter films." },
-  { img: "/images/service5.png", title: "Safety & Security Window Films", subtitle: "Enhance your safety by adding protection to your windows with anti-shatter films." },
+  { img: "/images/service1.png", title: "TuffSkin® Marble Protection", subtitle: "Protect your marble countertops from almost anything.", link: "/tuffskin" },
+  { img: "/images/service2.png", title: "Residential Window Tinting", subtitle: "Upgrade the style and energy efficiency of your home.", link: "/windowfilm" },
+  { img: "/images/service3.png", title: "Commercial Window Tinting", subtitle: "Drive Upgrade the style and energy efficiency of your commercial property.", link: "/windowfilm" },
+  { img: "/images/service4.png", title: "Decorative & Privacy Films", subtitle: "Enhance your safety by adding protection to your windows with anti-shatter films.", link: "/decorative" },
+  { img: "/images/service5.png", title: "Safety & Security Window Films", subtitle: "Enhance your safety by adding protection to your windows with anti-shatter films.", link: "/decorative" },
 ];
+
 
 const ServicesSection: React.FC = () => {
   return (
@@ -40,10 +42,16 @@ const ServicesSection: React.FC = () => {
             <div className={styles.overlay}>
             <h1 style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)" }}>{card.title}</h1>
             <p style={{padding: "10px", fontWeight: "100"}}>{card.subtitle}</p>
+              
+            <Link href={card.link} passHref>
               <button className={styles.learnMore}>
                 <FaLightbulb style={{ marginRight: "8px" }} />
                 Learn More
               </button>
+            </Link>
+
+
+
             </div>
           </motion.div>
         ))}

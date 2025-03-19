@@ -1,8 +1,10 @@
+"use client"
 import styles from "../styles/Hero.module.css";
 import Link from "next/link";
 import GoogleReviews from "../components/GoogleReviews";
 import { PiSealCheckFill } from "react-icons/pi";
-import { FaClipboard, FaPhoneAlt } from "react-icons/fa";
+import { FaClipboard } from "react-icons/fa";
+import TextButtonWithPopup from "./ButtonWithPopup";
 
 const Hero = () => {
   return (
@@ -65,10 +67,9 @@ const Hero = () => {
             Get a Quick Quote
         </Link>
         
-        <Link href="/" className={styles.secondaryButton}>
-            <FaPhoneAlt style={{ marginRight: "8px" }} />
-            Text Us 403 470 1687
-        </Link>
+        <TextButtonWithPopup />
+
+        
         </div>
 
       </div>

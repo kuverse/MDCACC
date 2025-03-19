@@ -53,13 +53,13 @@ const Footer = () => {
         <div className={styles.socialIconsBlock}>
           <h4>Follow Us</h4>
           <div className={styles.socialIcons}>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/channel/UCxJ_WibdI_sia2RZ_wAIOMw" target="_blank" rel="noopener noreferrer">
               <FaYoutube />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://instagram.com/tintitpro" target="_blank" rel="noopener noreferrer">
               <FaInstagram />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://facebook.com/tintitpro" target="_blank" rel="noopener noreferrer">
               <FaFacebookF />
             </a>
           </div>

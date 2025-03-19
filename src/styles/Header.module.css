@@ -242,3 +242,13 @@
     display: none;
   }
 }
+.socialIconsMobile {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  size: 20px;
+  padding: 5px;
+}
+.socialIconsMobile a:hover {
+  color: var(--primary);
+}

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import InfoTooltip from "./InfoTool";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const filmTypes = [
   { type: "None", pricePerSqFt: 0 },
@@ -28,14 +29,39 @@ interface WindowData {
   film: { type: string; pricePerSqFt: number };
 }
 
+
+
 const EstimatorPro: React.FC = () => {
+  const router = useRouter();
+
   const [windowData, setWindowData] = useState<WindowData[]>([
     { numWindows: 1, length: 100, width: 55, film: filmTypes[1] },
     { numWindows: 0, length: 0, width: 0, film: filmTypes[0] },
     { numWindows: 0, length: 0, width: 0, film: filmTypes[0] },
   ]);
-
   const [selectedEquipment, setSelectedEquipment] = useState(equipmentOptions[0]);
+
+
+
+  const handleBookingClick = () => {
+    const estimatorData = windowData.map((row, index) => (
+      `Row ${index + 1}: ${row.numWindows} windows, ${row.length}in x ${row.width}in, Film: ${row.film.type}`
+    )).join(" | ");
+  
+    const equipment = `${selectedEquipment.type}`;
+  
+    const queryParams = new URLSearchParams({
+      a1: estimatorData,
+      a2: equipment,
+    });
+  
+    router.push(`/booking?${queryParams.toString()}`);
+  };
+  
+  
+  
+
+
 
   const handleInputChange = (index: number, field: keyof WindowData, value: string) => {
     const updated = [...windowData];
@@ -247,26 +273,14 @@ const EstimatorPro: React.FC = () => {
 
 
           <button
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: "-140px",
-            transform: "translateX(-50%)",
-            background: "transparent",
-            border: "none",
-            padding: "0",
-            cursor: "pointer",
-            zIndex: 5,
-          }}
-          onClick={() => {
-            console.log("Schedule button clicked");
-          }}
+          className="scheduleButton"
+          onClick={handleBookingClick}
         >
-        <Link href="/booking">
-
-          <Image src="/images/schedule.png" alt="Estimator Pro Schedule" width={350} height={130} />
+          <Link href="/booking">
+            <Image src="/images/schedule.png" alt="Estimator Pro Schedule" width={350} height={130} />
           </Link>
         </button>
+
         </section>
 
        

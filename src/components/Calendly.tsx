@@ -1,37 +1,74 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Script from "next/script";
+import { useSearchParams } from "next/navigation";
+
+declare global {
+  interface Window {
+    Calendly: {
+      initInlineWidget: (options: { url: string; parentElement: HTMLElement }) => void;
+    };
+  }
+}
 
 const CalendlyInlineWidget: React.FC = () => {
   const widgetRef = useRef<HTMLDivElement>(null);
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const a1 = searchParams.get("a1") || "";
+    const a2 = searchParams.get("a2") || "";
+
+    const calendlyUrl = `https://calendly.com/tinterpro/45min?a1=${encodeURIComponent(a1)}&a2=${encodeURIComponent(a2)}`;
+
+    if (widgetRef.current && window.Calendly) {
+      // Call Calendly's initInlineWidget
+      window.Calendly.initInlineWidget({
+        url: calendlyUrl,
+        parentElement: widgetRef.current,
+      });
+    }
+  }, [searchParams]);
 
   return (
-    <div style={{
-      width: "100%",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      padding: "100px 0",
-      boxSizing: "border-box"
-    }}>
-      {/* Calendly Embed Container */}
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "100px 0",
+        boxSizing: "border-box",
+      }}
+    >
       <div
         ref={widgetRef}
-        className="calendly-inline-widget"
-        data-url="https://calendly.com/tinterpro/45min"
         style={{
           width: "100%",
-          maxWidth: "900px", // Limit max width for readability
-          height: "100vh", // Full viewport height
+          maxWidth: "900px",
+          height: "100vh",
           minHeight: "800px",
         }}
       ></div>
 
-      {/* Calendly Script */}
       <Script
         src="https://assets.calendly.com/assets/external/widget.js"
         strategy="afterInteractive"
+        onLoad={() => {
+          const a1 = searchParams.get("a1") || "";
+          const a2 = searchParams.get("a2") || "";
+
+          const calendlyUrl = `https://calendly.com/tinterpro/45min?a1=${encodeURIComponent(a1)}&a2=${encodeURIComponent(a2)}`;
+
+          if (widgetRef.current && window.Calendly) {
+            // Initialize Calendly after script loads
+            window.Calendly.initInlineWidget({
+              url: calendlyUrl,
+              parentElement: widgetRef.current,
+            });
+          }
+        }}
       />
     </div>
   );
