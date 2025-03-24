@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://tintitpro.ca
+
+# Sitemaps
+Sitemap: https://tintitpro.ca/sitemap.xml

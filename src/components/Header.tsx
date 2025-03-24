@@ -18,7 +18,7 @@ const Header: React.FC = () => {
         <Link href="/">
           <Image 
             src="/images/logo.png" 
-            alt="Company Logo" 
+            alt="Tint it Pro" 
             width={70}  
             height={50}  
             priority  

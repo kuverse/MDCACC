@@ -111,7 +111,7 @@ const EstimatorPro: React.FC = () => {
 
           <Image
             src="/images/estimator-pro.png"
-            alt="Estimator Pro Background"
+            alt="Window Tinting Estimator Pro Application"
             layout="fill"
             objectFit="cover"
             style={{

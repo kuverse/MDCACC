@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Tint it Pro",
-  description: "The best in the game.",
+  description: "The best in window tinting and marble protection.",
 };
 
 export default function RootLayout({

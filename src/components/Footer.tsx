@@ -12,7 +12,7 @@ const Footer = () => {
         {/* Logo */}
         <div className={styles.logoBlock}>
           <div className={styles.logo}>
-            <Image src="/images/logo.png" alt="Logo" width={250} height={160} />
+            <Image src="/images/logo.png" alt="Tint it Pro Logo" width={250} height={160} />
           </div>
         </div>
 

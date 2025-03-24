@@ -20,7 +20,7 @@ export default function Home() {
         </section>
 
         <LogoCarousel />
-        <MovieViewingComponent videoId="ZsGwmoubqqE" title="Watch Our Promo" />
+        <MovieViewingComponent videoId="ZsGwmoubqqE" title="Tuffskin marble protection" />
         <div className={styles.cardContainer}>
           <InfoCard
             icon={<FaShieldAlt size={40} color="var(--secondary)" />}
@@ -34,7 +34,7 @@ export default function Home() {
           />
           <InfoCard
             icon={<MdWbSunny size={40} color="var(--secondary)" />}
-            title="The Solar  Film Advantage"
+            title="Why Solar Film is Best"
             subtitle="Solar Gard® window films ensure superior quality and offer up to 82% heat rejection, 99% UV ray blocking, 90% glare reduction, interior fade control, and up to 30% energy cost savings."
           />
         </div>
