@@ -1,12 +1,15 @@
 "use client";
-import React from "react";
+
+import React, { useState } from "react";
+import Image from "next/image";
 
 interface MovieViewingComponentProps {
   videoId: string;
   title?: string;
   description?: string;
-  uploadDate?: string; // Format: "2024-03-25"
+  uploadDate?: string; // Format: "YYYY-MM-DD"
   thumbnailUrl?: string;
+  showCaption?: boolean;
 }
 
 const MovieViewingComponent: React.FC<MovieViewingComponentProps> = ({
@@ -14,8 +17,13 @@ const MovieViewingComponent: React.FC<MovieViewingComponentProps> = ({
   title = "Tint It Pro Marble Protection Video",
   description = "Watch how Tint It Pro protects marble surfaces using TuffSkin film.",
   uploadDate = "2024-03-10",
-  thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+  thumbnailUrl,
+  showCaption = true,
 }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const thumbUrl = thumbnailUrl || `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+  const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
   const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
 
   const structuredData = {
@@ -23,16 +31,16 @@ const MovieViewingComponent: React.FC<MovieViewingComponentProps> = ({
     "@type": "VideoObject",
     name: title,
     description,
-    thumbnailUrl: [thumbnailUrl],
+    thumbnailUrl: [thumbUrl],
     uploadDate,
     contentUrl: videoUrl,
-    embedUrl: `https://www.youtube.com/embed/${videoId}`,
+    embedUrl,
     publisher: {
       "@type": "Organization",
       name: "Tint It Pro",
       logo: {
         "@type": "ImageObject",
-        url: "https://tintitpro.netlify.app/images/logo.png", // replace with your real logo URL
+        url: "https://tintitpro.netlify.app/images/logo.png",
       },
     },
   };
@@ -50,7 +58,7 @@ const MovieViewingComponent: React.FC<MovieViewingComponentProps> = ({
         marginBottom: "80px",
       }}
     >
-      {/* Structured Data Script */}
+      {/* Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -68,32 +76,72 @@ const MovieViewingComponent: React.FC<MovieViewingComponentProps> = ({
           overflow: "hidden",
         }}
       >
-        <iframe
-          loading="lazy"
-          src={`https://www.youtube.com/embed/${videoId}`}
-          title={title}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-          }}
-        ></iframe>
-        <figcaption
-          id="video-title"
-          style={{
-            textAlign: "center",
-            marginTop: "20px",
-            color: "#fff",
-            fontWeight: "bold",
-          }}
-        >
-          {title}
-        </figcaption>
+        {isPlaying ? (
+          <iframe
+            src={embedUrl}
+            title={title}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            loading="lazy"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+            }}
+          />
+        ) : (
+          <div
+            onClick={() => setIsPlaying(true)}
+            role="button"
+            aria-label={`Play video: ${title}`}
+            style={{
+              cursor: "pointer",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+            }}
+          >
+            <Image
+              src={thumbUrl}
+              alt={`Thumbnail for ${title}`}
+              fill
+              sizes="(max-width: 768px) 100vw, 1200px"
+              style={{ objectFit: "cover" }}
+              priority
+            />
+            <div
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "70px",
+                height: "70px",
+                background: "url('/images/play.svg') no-repeat center center",
+                backgroundSize: "contain",
+              }}
+            />
+          </div>
+        )}
+        {showCaption && (
+          <figcaption
+            id="video-title"
+            style={{
+              textAlign: "center",
+              marginTop: "20px",
+              color: "#fff",
+              fontWeight: "bold",
+              fontSize: "1.1rem",
+            }}
+          >
+            {title}
+          </figcaption>
+        )}
       </figure>
     </section>
   );
