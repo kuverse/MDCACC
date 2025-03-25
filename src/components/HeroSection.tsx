@@ -1,7 +1,6 @@
 "use client";
 import styles from "../styles/Hero.module.css";
 import Link from "next/link";
-import Image from "next/image";
 import GoogleReviews from "../components/GoogleReviews";
 import { PiSealCheckFill } from "react-icons/pi";
 import { FaClipboard } from "react-icons/fa";
@@ -11,21 +10,6 @@ import { MdLocationOn } from "react-icons/md";
 const Hero = () => {
   return (
     <section className={styles.hero}>
-
-      <div className={styles.backgroundWrapper}>
-        <Image
-          src="/images/marble.png"
-          alt="Marble Countertop"
-          fill
-          priority
-          quality={80}
-          style={{
-            objectFit: "cover",
-            opacity: 0.5,
-          }}
-        />
-      </div>
-
 
       {/* Actual Content */}
       <div className={styles.heroContent}>

@@ -101,19 +101,27 @@
   }
   
   
-/* styles/Hero.module.css */
-.backgroundWrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0; /* ✅ Behind everything */
-}
-.heroContent {
-  position: relative;
-  z-index: 1; /* ✅ Ensures text shows immediately */
-}
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("/images/marble.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: var(--foreground);
+  }
+  
+  .heroContent {
+    max-width: 900px;
+    text-align: center;
+    z-index: 2;
+  }
 
 .locationWrapper {
   width: 100%;
@@ -131,7 +139,7 @@
   color: white;
   padding: 6px 14px;
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
   font-weight: bold;
   gap: 6px;
 }

@@ -32,7 +32,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Desktop Navigation */}
-      <nav className={styles.nav} role="navigation" aria-label="Main navigation">
+      <nav className={styles.nav} aria-label="Main navigation">
       <Link href="/#home" aria-label="Go to Home section">Home</Link>
       <Link href="/#solutions" aria-label="View our Solutions">Solutions</Link>
       <Link href="/#reviews" aria-label="Read customer Reviews">Reviews</Link>

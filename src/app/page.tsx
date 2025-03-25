@@ -11,21 +11,21 @@ import ServicesSection from "@/components/ServicesSection";
 import StreamBackground from "@/components/BackgroundDesign";
 import dynamic from "next/dynamic";
 
+const ElfsightWidget = dynamic(() => import("@/components/ElfSightGoogle"), {
+  ssr: false,
+  loading: () => (
+    <div style={{ height: "600px", textAlign: "center", padding: "40px" }}>
+      Loading reviews...
+    </div>
+  ),
+});
+
+const EstimatorPro = dynamic(() => import("@/components/EstimatorPro"), {
+  ssr: false,
+});
+
 
 export default function Home() {
-
-  const ElfsightWidget = dynamic(() => import("@/components/ElfSightGoogle"), {
-    ssr: false,
-    loading: () => (
-      <div style={{ height: "600px", textAlign: "center", padding: "40px" }}>
-        Loading reviews...
-      </div>
-    ),
-  });
-  
-  const EstimatorPro = dynamic(() => import("@/components/EstimatorPro"), {
-    ssr: false,
-  });
 
   return (
     <div className={styles.page}>

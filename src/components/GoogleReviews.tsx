@@ -10,7 +10,6 @@ const GoogleReviewsSimple = () => {
         target="_blank"
         rel="noopener noreferrer"
         className={styles.reviewLink}
-        aria-label="Google Reviews Link"
       >
         <div className={styles.reviewsRow}>
           <Image
