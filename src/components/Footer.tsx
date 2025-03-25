@@ -37,6 +37,7 @@ const Footer = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            title="Map showing location of Tint it Pro Calgary, Alberta, Canada"
             />
 
         </div>

@@ -164,6 +164,7 @@
   width: 100%;
   text-align: left;
   padding-left: 40px;
+  transition: color 0.3s ease-in-out;
 }
 
 .mobileNav a:hover {
@@ -180,17 +181,19 @@
   font-weight: bold;
   border-radius: 8px;
   text-decoration: none;
-  transition: background 0.3s ease-in-out;
   margin-top: auto;
   margin-bottom: 50px;
   width: fit-content;
   text-align: center;
   font-size: 14px;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
 }
 
 .mobileCtaButton:hover {
-  background-color:var(--border-color);
   transform: scale(1.1);
+  background-color: var(--text-muted);
+
 
 }
 
@@ -199,10 +202,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 25px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
   width: 100%;
   gap: 10px;
+  margin-bottom: 30%;
 }
 
 /* Extra Links */

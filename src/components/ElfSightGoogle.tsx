@@ -2,55 +2,42 @@
 
 import Script from "next/script";
 import TitleSection from "./TitleSection";
+import styles from "../styles/ElfSightGoogle.module.css";
+import { motion } from "framer-motion";
 
 const ElfsightWidget = () => {
   return (
-    <div
-      style={{
-        borderTop: "1px solid #ccc",
-        marginBottom: "100px",
-        padding: "50px",
-      }}
+    <motion.section
+      className={styles.wrapper}
+      aria-label="Customer Reviews Section"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
     >
-      <div
-        style={{
-          position: "relative",
-          width: "100%",
-          overflow: "hidden",
-          padding: "20px",
-          zIndex: -3,
-        }}
-      >
+      <div className={styles.inner}>
+        {/* Keep your original title component */}
         <TitleSection
           title="What Our Customers Say"
           subtitle="Check out the word on the street."
         />
-        {/* Load Elfsight platform script */}
+
+        {/* Load Elfsight widget script */}
         <Script
           src="https://static.elfsight.com/platform/platform.js"
           strategy="lazyOnload"
         />
 
-        {/* Widget Container */}
+        {/* Elfsight widget container */}
         <div
           className="elfsight-app-9a739ce6-aa6d-47ac-83b9-4952558ec03e"
           data-elfsight-app-lazy
         ></div>
 
-        {/* Overlay to cover credit */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            width: "100%",
-            height: "70px", // Adjust if needed
-            backgroundColor: "var(--background)", // Matches light/dark mode
-            zIndex: 10,
-          }}
-        ></div>
+        {/* Optional overlay to cover Elfsight credit badge */}
+        <div className={styles.overlay}></div>
       </div>
-    </div>
+    </motion.section>
   );
 };
 

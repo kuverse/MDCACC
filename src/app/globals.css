@@ -80,12 +80,14 @@ a {
   font-weight: 900;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'InterFontThin';
   src: url('/fonts/inter.ttf') format('truetype');
-  font-weight: bold;
+  font-weight: 600;
   font-style: normal;
 }
+
 
 .scheduleButton {
   position: absolute;

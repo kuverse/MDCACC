@@ -1,9 +1,11 @@
 "use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
 import InfoTooltip from "./InfoTool";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import styles from "../styles/EstimatorPro.module.css";
 
 const filmTypes = [
   { type: "None", pricePerSqFt: 0 },
@@ -29,8 +31,6 @@ interface WindowData {
   film: { type: string; pricePerSqFt: number };
 }
 
-
-
 const EstimatorPro: React.FC = () => {
   const router = useRouter();
 
@@ -41,45 +41,39 @@ const EstimatorPro: React.FC = () => {
   ]);
   const [selectedEquipment, setSelectedEquipment] = useState(equipmentOptions[0]);
 
-
-
   const handleBookingClick = () => {
-    const estimatorData = windowData.map((row, index) => {
-      const label = String.fromCharCode(65 + index); // A, B, C, etc.
-      return `${label}: ${row.numWindows} ${row.film.type} - ${row.length}in x ${row.width}in`;
-    }).join(" || ");
-    
-  
+    const estimatorData = windowData
+      .map((row, index) => {
+        const label = String.fromCharCode(65 + index);
+        return `${label}: ${row.numWindows} ${row.film.type} - ${row.length}in x ${row.width}in`;
+      })
+      .join(" || ");
+
     const equipment = ` || ${selectedEquipment.type} ||`;
-  
+
     const queryParams = new URLSearchParams({
       a1: estimatorData,
       a2: equipment,
     });
-  
+
     router.push(`/booking?${queryParams.toString()}`);
   };
-  
-  
-  
-
-
 
   const handleInputChange = (index: number, field: keyof WindowData, value: string) => {
     const updated = [...windowData];
     if (field === "film") {
       updated[index][field] = filmTypes.find((f) => f.type === value)!;
     } else {
-      updated[index][field] = value === '' ? '' : parseInt(value);
+      updated[index][field] = value === "" ? "" : parseInt(value);
     }
     setWindowData(updated);
   };
 
   const sanitizeData = () => {
     return windowData.map((row) => ({
-      numWindows: row.numWindows === '' ? 1 : row.numWindows,
-      length: row.length === '' ? 0 : row.length,
-      width: row.width === '' ? 0 : row.width,
+      numWindows: row.numWindows === "" ? 1 : row.numWindows,
+      length: row.length === "" ? 0 : row.length,
+      width: row.width === "" ? 0 : row.width,
       film: row.film,
     }));
   };
@@ -94,224 +88,111 @@ const EstimatorPro: React.FC = () => {
   ).toFixed(2);
 
   return (
-    <>
-      <div className="estimator-wrapper">
-        <section
-          style={{
-            position: "relative",
-            minWidth: "650px",
-            height: "840px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginBottom: "100px",
-          }}
-        >
-          <InfoTooltip />
+    <div className={styles.estimatorWrapper}>
+      <section className={styles.section}>
+        <InfoTooltip />
 
-          <Image
-            src="/images/estimator-pro.png"
-            alt="Window Tinting Estimator Pro Application"
-            layout="fill"
-            objectFit="cover"
-            style={{
-              position: "absolute",
-              width: "100%",
-              height: "100%",
-              zIndex: -1,
-            }}
-          />
+        <Image
+          src="/images/estimator-pro.png"
+          alt="Window Tinting Estimator Pro Application"
+          fill
+          className={styles.bgImage}
+        />
 
-          <div
-            style={{
-              position: "absolute",
-              marginTop: "130px",
-              width: "95%",
-              padding: "35px",
-              borderRadius: "8px",
-              marginLeft: "35px",
-            }}
-          >
-            <h2
-              style={{
-                fontSize: "1.5rem",
-                marginBottom: "52px",
-                color: "#27A7E0",
-                textAlign: "center",
-                padding: "45px",
-                marginRight: "50px",
-                maxWidth: "750px",
-                overflow: "hidden",
-                whiteSpace: "nowrap",
-                textOverflow: "ellipsis",
-              }}
-            >
-              Estimated Cost: ${totalCost}
-            </h2>
+        <div className={styles.formWrapper}>
+          <h2 className={styles.totalHeading}>Estimated Cost: ${totalCost}</h2>
 
-            {windowData.map((row, index) => (
-              <div
-                key={index}
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  gap: "22px",
-                  marginBottom: "20px",
-                  marginRight: "27px",
-                  justifyContent: "center",
+          {windowData.map((row, index) => (
+            <div key={index} className={styles.row}>
+              <label htmlFor={`numWindows-${index}`} className={styles.srOnly}>Number of Windows</label>
+              <input
+                id={`numWindows-${index}`}
+                type="number"
+                min={1}
+                value={row.numWindows}
+                onChange={(e) => handleInputChange(index, "numWindows", e.target.value)}
+                onBlur={(e) => {
+                  if (e.target.value === "") handleInputChange(index, "numWindows", "1");
                 }}
-              >
-                {/* Number of Windows */}
-                <input
-                  type="number"
-                  min={1}
-                  value={row.numWindows}
-                  onChange={(e) => handleInputChange(index, "numWindows", e.target.value)}
-                  onBlur={(e) => {
-                    if (e.target.value === '') handleInputChange(index, "numWindows", '1');
-                  }}
-                  style={{
-                    border: "transparent",
-                    width: "48px",
-                    height: "40px",
-                    textAlign: "center",
-                    borderRadius: "4px",
-                    color: "#3D4143",
-                    fontWeight: "bold",
-                    backgroundColor: "white",
-                  }}
-                />
+                className={`${styles.input} ${styles.smallInput}`}
+              />
 
-                {/* Length */}
-                <input
-                  type="number"
-                  value={row.length}
-                  onChange={(e) => handleInputChange(index, "length", e.target.value)}
-                  onBlur={(e) => {
-                    if (e.target.value === '') handleInputChange(index, "length", '0');
-                  }}
-                  style={{
-                    padding: "10px",
-                    borderRadius: "4px",
-                    border: "transparent",
-                    width: "89px",
-                    color: "#3D4143",
-                    fontWeight: "bold",
-                    backgroundColor: "white",
-                  }}
-                />
+              <label htmlFor={`length-${index}`} className={styles.srOnly}>Length in inches</label>
+              <input
+                id={`length-${index}`}
+                type="number"
+                value={row.length}
+                onChange={(e) => handleInputChange(index, "length", e.target.value)}
+                onBlur={(e) => {
+                  if (e.target.value === "") handleInputChange(index, "length", "0");
+                }}
+                className={styles.input}
+              />
 
-                {/* Width */}
-                <input
-                  type="number"
-                  value={row.width}
-                  onChange={(e) => handleInputChange(index, "width", e.target.value)}
-                  onBlur={(e) => {
-                    if (e.target.value === '') handleInputChange(index, "width", '0');
-                  }}
-                  style={{
-                    padding: "10px",
-                    borderRadius: "4px",
-                    border: "transparent",
-                    width: "89px",
-                    marginLeft: "4px",
-                    color: "#3D4143",
-                    fontWeight: "bold",
-                    backgroundColor: "white",
-                  }}
-                />
+              <label htmlFor={`width-${index}`} className={styles.srOnly}>Width in inches</label>
+              <input
+                id={`width-${index}`}
+                type="number"
+                value={row.width}
+                onChange={(e) => handleInputChange(index, "width", e.target.value)}
+                onBlur={(e) => {
+                  if (e.target.value === "") handleInputChange(index, "width", "0");
+                }}
+                className={styles.input}
+              />
 
-                {/* Film Type */}
-                <select
-                  value={row.film.type}
-                  onChange={(e) => handleInputChange(index, "film", e.target.value)}
-                  style={{
-                    padding: "10px",
-                    borderRadius: "4px",
-                    border: "transparent",
-                    width: "130px",
-                    marginRight: "29px",
-                    color: "#3D4143",
-                    fontWeight: "bold",
-                    backgroundColor: "white",
-                  }}
-                >
-                  {filmTypes.map((f) => (
-                    <option key={f.type} value={f.type}>
-                      {f.type}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            ))}
-
-            <div style={{ textAlign: "left", marginTop: "31px", marginLeft: "35px", position: "relative" }}>
+              <label htmlFor={`film-${index}`} className={styles.srOnly}>Film Type</label>
               <select
-                value={selectedEquipment.type}
-                onChange={(e) =>
-                  setSelectedEquipment(
-                    equipmentOptions.find((eq) => eq.type === e.target.value)!
-                  )
-                }
-                style={{
-                  padding: "5px",
-                  borderRadius: "4px",
-                  border: "transparent",
-                  width: "77px",
-                  backgroundColor: "white",
-                  color: "#3D4143",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                }}
+                id={`film-${index}`}
+                value={row.film.type}
+                onChange={(e) => handleInputChange(index, "film", e.target.value)}
+                className={`${styles.select} ${styles.filmSelect}`}
               >
-                {equipmentOptions.map((eq) => (
-                  <option key={eq.type} value={eq.type}>
-                    {eq.type}
+                {filmTypes.map((f) => (
+                  <option key={f.type} value={f.type}>
+                    {f.type}
                   </option>
                 ))}
               </select>
             </div>
+          ))}
+
+          <div className={styles.equipmentWrapper}>
+            <label htmlFor="equipment" className={styles.srOnly}>Equipment</label>
+            <select
+              id="equipment"
+              value={selectedEquipment.type}
+              onChange={(e) =>
+                setSelectedEquipment(
+                  equipmentOptions.find((eq) => eq.type === e.target.value)!
+                )
+              }
+              className={styles.equipmentSelect}
+            >
+              {equipmentOptions.map((eq) => (
+                <option key={eq.type} value={eq.type}>
+                  {eq.type}
+                </option>
+              ))}
+            </select>
           </div>
+        </div>
 
-
-          <button
-          className="scheduleButton"
+        <Link
+          href="/booking"
+          aria-label="Schedule an appointment with Estimator Pro"
           onClick={handleBookingClick}
+          className="scheduleButton"
         >
-          <Link href="/booking">
-            <Image src="/images/schedule.png" alt="Estimator Pro Schedule" width={350} height={130} />
-          </Link>
-        </button>
-
-        </section>
-
-       
-      </div>
-
-
-      <style jsx>{`
-        .estimator-wrapper {
-          transform: scale(1);
-          transform-origin: top center;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-bottom: 100px;
-        }
-
-        @media (max-width: 768px) {
-          .estimator-wrapper {
-            transform: scale(0.65);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-height: 630px;
-            margin-bottom: -30px;
-
-          }
-        }
-      `}</style>
-    </>
+          <Image
+            src="/images/schedule.png"
+            alt="Estimator Pro Schedule"
+            width={350}
+            height={130}
+          />
+        </Link>
+      </section>
+    </div>
   );
 };
 

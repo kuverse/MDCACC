@@ -24,6 +24,8 @@
     overflow: hidden;
     background-color: var(--background);
     transition: max-height 0.3s ease, padding 0.3s ease;
+    color: var(--secondary);
+    font-weight: 100;
   }
   
   .answer.show {

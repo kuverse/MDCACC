@@ -6,34 +6,33 @@ const partnerLogos = [
   "/images/panorama.webp",
   "/images/solarguard.png",
   "/images/tuffskin-web.png",
-
 ];
 
 const LogoCarousel = () => {
   return (
     <div className={styles.carouselWrapper}>
       <div className={styles.carouselTrack}>
-      {partnerLogos.concat(partnerLogos).map((logo, index) => {
-  // Check if it's the Tuffskin logo
-  const isTuffskin = logo.includes("tuffskin");
+        {partnerLogos.concat(partnerLogos).map((logo, index) => {
+          const isTuffskin = logo.includes("tuffskin");
 
-  return (
-    <div className={styles.logoItem} key={index}>
-      <Image 
-        src={logo} 
-        alt={`Partner ${index}`} 
-        width={isTuffskin ? 80 : 120} // Reduce width just for Tuffskin
-        height={isTuffskin ? 50 : 60}  // Reduce height
-        style={{
-          objectFit: "contain",
-          maxHeight: isTuffskin ? "30px" : "60px",
-          width: "auto"
-        }}
-      />
-    </div>
-  );
-})}
+          const width = isTuffskin ? 80 : 120;
+          const height = isTuffskin ? 50 : 60;
 
+          return (
+            <div className={styles.logoItem} key={index}>
+              <Image
+                src={logo}
+                alt={`Partner Logo ${index + 1}`}
+                width={width}
+                height={height}
+                style={{
+                  objectFit: "contain",
+                  height: "auto", // Maintain aspect ratio
+                }}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

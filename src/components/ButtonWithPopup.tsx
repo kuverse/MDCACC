@@ -16,6 +16,7 @@ const TextButtonWithPopup: React.FC = () => {
         onClick={handleClick}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
+        aria-label="Text us at 403 470 1687"
         style={{
           backgroundColor: hovered ? "var(--primary)" : "transparent",
           border: "2px solid var(--text-button)",

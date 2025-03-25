@@ -1,13 +1,16 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Script from "next/script";
 import { useSearchParams } from "next/navigation";
 
 declare global {
   interface Window {
-    Calendly: {
-      initInlineWidget: (options: { url: string; parentElement: HTMLElement }) => void;
+    Calendly?: {
+      initInlineWidget: (options: {
+        url: string;
+        parentElement: HTMLElement;
+      }) => void;
     };
   }
 }
@@ -15,20 +18,30 @@ declare global {
 const CalendlyInlineWidget: React.FC = () => {
   const widgetRef = useRef<HTMLDivElement>(null);
   const searchParams = useSearchParams();
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
+  const queryString = searchParams.toString();
 
   useEffect(() => {
+    if (!scriptLoaded) return;
+
     const a1 = searchParams.get("a1") || "";
     const a2 = searchParams.get("a2") || "";
 
-    const calendlyUrl = `https://calendly.com/tinterpro/45min?a1=${encodeURIComponent(a1)}&a2=${encodeURIComponent(a2)}`;
+    const calendlyUrl = `https://calendly.com/tinterpro/45min?a1=${encodeURIComponent(
+      a1
+    )}&a2=${encodeURIComponent(a2)}`;
 
     if (widgetRef.current && window.Calendly) {
+      // Clear previous iframe if any (important!)
+      widgetRef.current.innerHTML = "";
+
       window.Calendly.initInlineWidget({
         url: calendlyUrl,
         parentElement: widgetRef.current,
       });
     }
-  }, [searchParams]);
+  }, [scriptLoaded, queryString, searchParams]);
 
   return (
     <div
@@ -36,8 +49,7 @@ const CalendlyInlineWidget: React.FC = () => {
         width: "100%",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
-        padding: "100px 0",
+        padding: "80px 0",
         boxSizing: "border-box",
       }}
     >
@@ -46,14 +58,15 @@ const CalendlyInlineWidget: React.FC = () => {
         style={{
           width: "100%",
           maxWidth: "900px",
-          height: "100vh",
-          minHeight: "800px",
+          height: "150vh", // 👈 Make sure height is defined
+          minHeight: "700px", // 👈 Important fallback
         }}
       ></div>
 
       <Script
         src="https://assets.calendly.com/assets/external/widget.js"
         strategy="afterInteractive"
+        onLoad={() => setScriptLoaded(true)}
       />
     </div>
   );
