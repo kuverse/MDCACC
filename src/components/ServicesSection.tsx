@@ -83,9 +83,9 @@ const ServicesSection: React.FC = () => {
                 />
               </div>
               <div className={styles.overlay}>
-                <h1 style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)" }}>
+                <h2 style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)" }}>
                   {card.title}
-                </h1>
+                </h2>
                 <p style={{ padding: "10px", fontWeight: "100" }}>
                   {card.subtitle}
                 </p>

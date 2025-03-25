@@ -24,18 +24,19 @@
 
 }
 
+
 h1, h2, h3, .titleFont {
-  font-family: 'InterFont', sans-serif;
+  font-family: var(--font-inter-bold), sans-serif;
 }
 
 h4 {
-  font-family: 'InterFont', sans-serif;
+  font-family: var(--font-inter-bold), sans-serif;
   color: var(--secondary);
   padding: 4px;
 }
 
 p {
-  font-family: 'InterFontThin', sans-serif;
+  font-family: var(--font-inter-thin), sans-serif;
   font-weight: 100;
 }
 
@@ -51,7 +52,7 @@ html, body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter-thin), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -72,20 +73,6 @@ a {
   html {
     color-scheme: dark;
   }
-}
-
-@font-face {
-  font-family: 'InterFont';
-  src: url('/fonts/inter.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'InterFontThin';
-  src: url('/fonts/inter.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
 }
 
 

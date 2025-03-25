@@ -54,13 +54,17 @@ const Footer = () => {
         <div className={styles.socialIconsBlock}>
           <h4>Follow Us</h4>
           <div className={styles.socialIcons}>
-            <a href="https://www.youtube.com/channel/UCxJ_WibdI_sia2RZ_wAIOMw" target="_blank" rel="noopener noreferrer">
+            <a 
+            href="https://www.youtube.com/channel/UCxJ_WibdI_sia2RZ_wAIOMw" target="_blank" rel="noopener noreferrer"
+            aria-label="Youtube Link">
               <FaYoutube />
             </a>
-            <a href="https://instagram.com/tintitpro" target="_blank" rel="noopener noreferrer">
+            <a href="https://instagram.com/tintitpro" target="_blank" rel="noopener noreferrer"
+            aria-label="Instagram Link">
               <FaInstagram />
             </a>
-            <a href="https://facebook.com/tintitpro" target="_blank" rel="noopener noreferrer">
+            <a href="https://facebook.com/tintitpro" target="_blank" rel="noopener noreferrer"
+            aria-label="Facebook Link">
               <FaFacebookF />
             </a>
           </div>
@@ -70,8 +74,12 @@ const Footer = () => {
       {/* Bottom Section */}
       <div className={styles.bottomFooter}>
         <div className={styles.bottomLinks}>
-          <Link href="https://policies.google.com/privacy">Privacy Policy</Link>
-          <Link href="https://policies.google.com/terms">Terms of Service</Link>
+          <Link 
+            aria-label="Privacy Policy"
+            href="https://policies.google.com/privacy">Privacy Policy</Link>
+          <Link 
+            aria-label="Terms of Service"
+            href="https://policies.google.com/terms">Terms of Service</Link>
         </div>
         <p className={styles.copyText}>Tint It Pro © 2025. All Rights Reserved.</p>
       </div>

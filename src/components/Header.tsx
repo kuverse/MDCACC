@@ -75,7 +75,7 @@ const Header: React.FC = () => {
           <X size={32} />
         </button>
 
-        <nav className={styles.mobileNav} role="navigation" aria-label="Mobile navigation">
+        <nav className={styles.mobileNav} aria-label="Mobile navigation">
           <Link href="/#home" onClick={handleMenuClose}>Home</Link>
           <Link href="/#solutions" onClick={handleMenuClose}>Solutions</Link>
           <Link href="/#reviews" onClick={handleMenuClose}>Reviews</Link>

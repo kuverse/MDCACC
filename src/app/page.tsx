@@ -50,12 +50,12 @@ export default function Home() {
         </section>
 
         <section id="estimator" style={{ position: "relative"}}>
-          <StreamBackground position="bottom" height="1000px"/>
+          <StreamBackground position="bottom" height="1000px" variant="dramatic"/>
 
           <EstimatorPro />
         </section>
         <section id="faq" style={{ position: "relative",  marginTop: "-5px" }}>
-        <StreamBackground position="top" height="100px"/>
+        <StreamBackground position="top" height="100px" variant="dramatic"/>
 
         <FAQSection />
         </section>

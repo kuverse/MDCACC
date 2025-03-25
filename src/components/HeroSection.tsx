@@ -61,7 +61,10 @@ const Hero = () => {
         <GoogleReviews />
 
         <div className={styles.ctaButtons}>
-          <Link href="#estimator" className={styles.primaryButton}>
+          <Link href="#estimator" 
+          className={styles.primaryButton}
+          aria-label={"Get a Quick Quote"}
+          >
             <FaClipboard style={{ marginRight: "8px" }} />
             Get a Quick Quote
           </Link>

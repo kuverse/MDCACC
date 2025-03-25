@@ -19,6 +19,7 @@ const ThemeToggle: React.FC = () => {
   return (
     <button
       onClick={() => setTheme(currentTheme === "light" ? "dark" : "light")}
+      aria-label={"Light and Dark Theme Toggle"}
       style={{
         background: "transparent", // No background
         border: "none",

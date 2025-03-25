@@ -3,6 +3,22 @@ import ThemeProviderWrapper from "../components/ThemeProviderWrapper";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import localFont from "next/font/local";
+
+
+const interFontBold = localFont({
+  src: "./fonts/inter.ttf",
+  variable: "--font-inter-bold",
+  weight: "900",
+  display: "swap",
+});
+
+const interFontThin = localFont({
+  src: "./fonts/inter.ttf",
+  variable: "--font-inter-thin",
+  weight: "600",
+  display: "swap",
+});
 
 
 export const metadata: Metadata = {
@@ -23,7 +39,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://tintitpro.netlify.app/og-image.jpg", // Make sure this image exists and is optimized
+        url: "https://tintitpro.netlify.app/images/logo.png", // Make sure this image exists and is optimized
         width: 1200,
         height: 630,
         alt: "Tint it Pro - Window Tint & Protection",
@@ -51,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${interFontBold.variable} ${interFontThin.variable}`}>
       <body>
         <ThemeProviderWrapper>  
           <Header />        
