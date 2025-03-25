@@ -6,6 +6,7 @@ import GoogleReviews from "../components/GoogleReviews";
 import { PiSealCheckFill } from "react-icons/pi";
 import { FaClipboard } from "react-icons/fa";
 import TextButtonWithPopup from "./ButtonWithPopup";
+import { MdLocationOn } from "react-icons/md";
 
 const Hero = () => {
   return (
@@ -14,7 +15,7 @@ const Hero = () => {
       <div className={styles.backgroundWrapper}>
         <Image
           src="/images/marble.png"
-          alt=""
+          alt="Marble Countertop"
           fill
           priority
           quality={80}
@@ -28,6 +29,14 @@ const Hero = () => {
 
       {/* Actual Content */}
       <div className={styles.heroContent}>
+      
+      <div className={styles.locationWrapper}>
+        <div className={styles.locationTag}>
+          <MdLocationOn size={18} />
+          <span>Calgary, AB</span>
+        </div>
+      </div>
+
         <h1 className={styles.title}>
           Tint it & Protect it{" "}
           <span className={styles.secondary}>like a Pro</span>
