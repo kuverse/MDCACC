@@ -10,19 +10,21 @@ import TextButtonWithPopup from "./ButtonWithPopup";
 const Hero = () => {
   return (
     <section className={styles.hero}>
-      {/* Background Image using Next.js Image */}
-      <Image
-        src="/images/marble.png"
-        alt="Marble background texture"
-        fill
-        priority
-        quality={80}
-        style={{
-          objectFit: "cover",
-          zIndex: 1,
-          opacity: 0.5,
-        }}
-      />
+
+      <div className={styles.backgroundWrapper}>
+        <Image
+          src="/images/marble.png"
+          alt=""
+          fill
+          priority
+          quality={80}
+          style={{
+            objectFit: "cover",
+            opacity: 0.5,
+          }}
+        />
+      </div>
+
 
       {/* Actual Content */}
       <div className={styles.heroContent}>

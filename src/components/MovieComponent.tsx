@@ -45,6 +45,10 @@ const MovieViewingComponent: React.FC<MovieViewingComponentProps> = ({
     },
   };
 
+  const handlePlay = () => {
+    if (!isPlaying) setIsPlaying(true);
+  };
+
   return (
     <section
       aria-labelledby="video-title"
@@ -58,7 +62,6 @@ const MovieViewingComponent: React.FC<MovieViewingComponentProps> = ({
         marginBottom: "80px",
       }}
     >
-      {/* Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -94,7 +97,8 @@ const MovieViewingComponent: React.FC<MovieViewingComponentProps> = ({
           />
         ) : (
           <div
-            onClick={() => setIsPlaying(true)}
+            onClick={handlePlay}
+            onMouseEnter={handlePlay}
             role="button"
             aria-label={`Play video: ${title}`}
             style={{

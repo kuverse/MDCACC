@@ -33,12 +33,13 @@ const Header: React.FC = () => {
 
       {/* Desktop Navigation */}
       <nav className={styles.nav} role="navigation" aria-label="Main navigation">
-        <Link href="/#home">Home</Link>
-        <Link href="/#solutions">Solutions</Link>
-        <Link href="/#reviews">Reviews</Link>
-        <Link href="/#estimator">Estimator Pro</Link>
-        <Link href="/#faq">FAQ</Link>
-      </nav>
+      <Link href="/#home" aria-label="Go to Home section">Home</Link>
+      <Link href="/#solutions" aria-label="View our Solutions">Solutions</Link>
+      <Link href="/#reviews" aria-label="Read customer Reviews">Reviews</Link>
+      <Link href="/#estimator" aria-label="Open Estimator Pro section">Estimator Pro</Link>
+      <Link href="/#faq" aria-label="View Frequently Asked Questions">FAQ</Link>
+    </nav>
+
 
       {/* Desktop Call to Action & Theme Toggle */}
       <div className={styles.desktopActions}>
@@ -76,11 +77,11 @@ const Header: React.FC = () => {
         </button>
 
         <nav className={styles.mobileNav} aria-label="Mobile navigation">
-          <Link href="/#home" onClick={handleMenuClose}>Home</Link>
-          <Link href="/#solutions" onClick={handleMenuClose}>Solutions</Link>
-          <Link href="/#reviews" onClick={handleMenuClose}>Reviews</Link>
-          <Link href="/#estimator" onClick={handleMenuClose}>Estimator Pro</Link>
-          <Link href="/#faq" onClick={handleMenuClose}>FAQ</Link>
+        <Link href="/#home" aria-label="Go to Home section">Home</Link>
+        <Link href="/#solutions" aria-label="View our Solutions">Solutions</Link>
+        <Link href="/#reviews" aria-label="Read customer Reviews">Reviews</Link>
+        <Link href="/#estimator" aria-label="Open Estimator Pro section">Estimator Pro</Link>
+        <Link href="/#faq" aria-label="View Frequently Asked Questions">FAQ</Link>
         </nav>
 
         {/* Mobile CTA */}
