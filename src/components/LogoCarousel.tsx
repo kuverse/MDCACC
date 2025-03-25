@@ -15,20 +15,26 @@ const LogoCarousel = () => {
         {partnerLogos.concat(partnerLogos).map((logo, index) => {
           const isTuffskin = logo.includes("tuffskin");
 
-          const width = isTuffskin ? 80 : 120;
-          const height = isTuffskin ? 50 : 60;
+          const width = isTuffskin ? 100 : 120; // Slightly wider
+          const height = isTuffskin ? 70 : 60;  // Same height for now, or increase to 70 if needed
 
           return (
-            <div className={styles.logoItem} key={index}>
+            <div
+              className={styles.logoItem}
+              key={index}
+              style={{
+                position: "relative",
+                width: `${width}px`,
+                height: `${height}px`,
+              }}
+            >
               <Image
                 src={logo}
                 alt={`Partner Logo ${index + 1}`}
-                width={width}
-                height={height}
-                style={{
-                  objectFit: "contain",
-                  height: "auto", // Maintain aspect ratio
-                }}
+                fill
+                style={{ objectFit: "contain" }}
+                sizes={`${width}px`}
+                priority={index < 4}
               />
             </div>
           );
