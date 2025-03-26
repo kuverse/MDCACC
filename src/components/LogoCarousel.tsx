@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "../styles/LogoCarousel.module.css";
+import TitleSection from "./TitleSection";
 
 const partnerLogos = [
   "/images/armorcoat-sheild.png",
@@ -11,6 +12,7 @@ const partnerLogos = [
 const LogoCarousel = () => {
   return (
     <div className={styles.carouselWrapper}>
+      <TitleSection title="Certified by the Best"/><br></br>
       <div className={styles.carouselTrack}>
         {partnerLogos.concat(partnerLogos).map((logo, index) => {
           const isTuffskin = logo.includes("tuffskin");

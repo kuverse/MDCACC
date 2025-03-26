@@ -4,7 +4,7 @@ import React from "react";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import Image from "next/image";
 import styles from "../styles/ServicesSection.module.css";
-import { FaLightbulb } from "react-icons/fa";
+import { FaClipboard, FaLightbulb } from "react-icons/fa";
 import TitleSection from "./TitleSection";
 import Link from "next/link";
 
@@ -12,13 +12,13 @@ const serviceCards = [
   {
     img: "/images/service1.png",
     title: "TuffSkin® Marble Protection",
-    subtitle: "Protect your marble countertops from almost anything.",
+    subtitle: "Marble Protection – 100% Etch & Stain Proof",
     link: "/tuffskin",
   },
   {
     img: "/images/service2.png",
     title: "Residential Window Tinting",
-    subtitle: "Upgrade the style and energy efficiency of your home.",
+    subtitle: "Solar Guard Window Tinting – Blocks heat, glare & UV damage",
     link: "/windowfilm",
   },
   {
@@ -62,7 +62,7 @@ const ServicesSection: React.FC = () => {
 
       <TitleSection
         title="Our Solutions"
-        subtitle="From windows to countertops, we got you covered."
+        subtitle="Cooler Homes. Protected Marble. No More Stress."
       />
 
       <div className={styles.cardContainer}>
@@ -103,6 +103,14 @@ const ServicesSection: React.FC = () => {
                 >
                   <FaLightbulb style={{ marginRight: "8px" }} />
                   Learn More
+                </Link>
+                <Link
+                  href={"/booking"}
+                  className={styles.learnMore2}
+                  aria-label={`Schedule a consult about ${card.title}`}
+                >
+                  <FaClipboard style={{ marginRight: "8px" }} />
+                  Schedule a Free Consult
                 </Link>
               </div>
             </m.div>

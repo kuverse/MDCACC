@@ -40,8 +40,8 @@ export default function Home() {
           />
           <InfoCard
             icon={<FaAward size={40} color="var(--secondary)" />}
-            title="TuffSkin® 10 Year Warranty"
-            subtitle="100% Stain & Etch Proof with a 10-Year Warranty. 400,000+ Surfaces Protected Since 2006."
+            title="100% Etch-Proof & Stain-Proof Marble—Guaranteed."
+            subtitle="Protect your high-end stone surfaces from damage & costly repairs."
           />
           <InfoCard
             icon={<MdWbSunny size={40} color="var(--secondary)" />}

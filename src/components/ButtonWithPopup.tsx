@@ -31,13 +31,14 @@ const TextButtonWithPopup: React.FC = () => {
           transform: hovered ? "scale(1.1)" : "scale(1)",
           transition: "background 0.3s ease, transform 0.3s ease",
           textDecoration: "none",
-          fontWeight: "900", // Extra bold
+          fontWeight: "900",
+          fontFamily: "var(--font-inter-bold)",
           minWidth: "250px",
           fontSize: "1rem",
         }}
       >
         <FaPhoneAlt />
-        Text Us 403 470 1687
+        Get Instant Response
       </button>
 
       {showPopup && (
@@ -57,7 +58,7 @@ const TextButtonWithPopup: React.FC = () => {
             transition: "opacity 0.3s ease",
           }}
         >
-          Message me! 😉
+          Message me at 403 470 1687 😉
         </div>
       )}
     </div>

@@ -38,7 +38,9 @@ const Header: React.FC = () => {
       <Link href="/#reviews" aria-label="Read what our customers are saying in Reviews">Reviews</Link>
       <Link href="/#estimator" aria-label="Use our Estimator Pro to get a quote">Estimator Pro</Link>
       <Link href="/#faq" aria-label="Frequently Asked Questions about our services">FAQ</Link>
-    </nav>
+      <Link href="/blogs" aria-label="Tint it Pro Blog posts">Blog</Link>
+
+      </nav>
 
 
 
@@ -46,12 +48,12 @@ const Header: React.FC = () => {
       <div className={styles.desktopActions}>
         <ThemeToggle />
         <Link
-          href="/booking"
+          href="/#estimator"
           className={styles.ctaButton}
-          aria-label="Schedule a visit"
+          aria-label="Get your free quote today"
         >
           <FaClipboard style={{ marginRight: "8px" }} />
-          Schedule a Visit
+          Get Your Free Quote Today!
         </Link>
       </div>
 
@@ -83,16 +85,17 @@ const Header: React.FC = () => {
         <Link href="/#reviews" aria-label="Read what our customers are saying in Reviews">Reviews</Link>
         <Link href="/#estimator" aria-label="Use our Estimator Pro to get a quote">Estimator Pro</Link>
         <Link href="/#faq" aria-label="Frequently Asked Questions about our services">FAQ</Link>
+        <Link href="/blogs" aria-label="Tint it Pro Blog posts">Blog</Link>
       </nav>
 
         {/* Mobile CTA */}
         <Link
-          href="/booking"
+          href="/#estimator"
           className={styles.mobileCtaButton}
           aria-label="Schedule a visit"
         >
           <FaClipboard style={{ marginRight: "8px" }} />
-          Schedule a Visit
+          Get Your Free Quote Today!
         </Link>
 
         {/* Social Icons & Footer */}

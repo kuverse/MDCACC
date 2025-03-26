@@ -117,3 +117,55 @@
     border: 0;
   }
   
+  .ctaHeadline {
+    color: white;
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 1.45rem);
+    font-weight: 600;
+    line-height: 1.6;
+  }
+  
+  .ctaHeadline span {
+    display: block;
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    font-weight: 400;
+    margin-top: 0.5rem;
+  }
+
+  .scheduleButton {
+    display: block;
+    margin: 65rem auto 0 auto; /* top auto-bottom spacing */
+    width: fit-content;
+  }
+  
+  
+  @keyframes wigglePop {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    25% {
+      transform: scale(1.05) rotate(-3deg);
+    }
+    50% {
+      transform: scale(1.1) rotate(3deg);
+    }
+    75% {
+      transform: scale(1.05) rotate(-2deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  
+  .wigglePop {
+    animation: wigglePop 2.5s ease-in-out infinite;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+  }
+  
+  /* Optional: boost it on hover too */
+  .wigglePop:hover {
+    animation: wigglePop 0.6s ease-in-out;
+  }
+  
+  

@@ -21,13 +21,14 @@ const Hero = () => {
       </div>
 
         <h1 className={styles.title}>
-          Tint it & Protect it{" "}
+          Tint & Protect {" "}
           <span className={styles.secondary}>like a Pro</span>
-          <PiSealCheckFill className={styles.checkIcon} />
+          <PiSealCheckFill className={styles.checkIcon} /><br></br>
+          – Goodbye Heat, UV & Marble Damage.
         </h1>
 
         <p className={styles.subtitle}>
-          Professional Commercial and Residential{" "}
+          Premium{" "}
           <span
             style={{
               color: "var(--secondary)",
@@ -38,7 +39,7 @@ const Hero = () => {
           >
             <Link href="https://www.solargard.com/">SolarGard</Link>
           </span>
-          <span style={{ color: "var(--secondary)" }}>®</span> window tinting and{" "}
+          <span style={{ color: "var(--secondary)" }}>®</span> Window Tinting &{" "}
           <span
             style={{
               color: "var(--secondary)",
@@ -49,7 +50,7 @@ const Hero = () => {
           >
             <Link href="https://www.tuffskin.com/">Tuffskin</Link>
           </span>
-          <span style={{ color: "var(--secondary)" }}>®</span> marble protection.
+          <span style={{ color: "var(--secondary)" }}>®</span> Marble Protection for Homes & Businesses.
         </p>
 
         <GoogleReviews />
@@ -60,7 +61,7 @@ const Hero = () => {
           aria-label={"Get a Quick Quote"}
           >
             <FaClipboard style={{ marginRight: "8px" }} />
-            Get a Quick Quote
+            Book in Home Estimate
           </Link>
 
           <TextButtonWithPopup />

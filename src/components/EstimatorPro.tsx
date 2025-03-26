@@ -88,6 +88,7 @@ const EstimatorPro: React.FC = () => {
   ).toFixed(2);
 
   return (
+    <>
     <div className={styles.estimatorWrapper}>
       <section className={styles.section}>
         <InfoTooltip />
@@ -182,17 +183,27 @@ const EstimatorPro: React.FC = () => {
           href="/booking"
           aria-label="Schedule an appointment with Estimator Pro"
           onClick={handleBookingClick}
-          className="scheduleButton"
+          className={styles.scheduleButton}
         >
           <Image
             src="/images/schedule.png"
             alt="Estimator Pro Schedule"
             width={350}
             height={130}
+            className={styles.wigglePop}
           />
         </Link>
+
+        
       </section>
-    </div>
+
+        </div>
+          <h3 className={styles.ctaHeadline}>
+            Know the Cost Before You Commit – <br></br>Get a Fast & Accurate Estimate!<br />
+            <span>(Fill out our quick estimator tool & get pricing in minutes!)</span>
+          </h3>
+
+          </>
   );
 };
 
