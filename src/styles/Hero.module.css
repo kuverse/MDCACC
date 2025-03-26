@@ -6,6 +6,7 @@
   line-height: 1.2;
   word-break: break-word;
   text-align: center; /* optional if you want it centered */
+  color: var(--foreground);
 }
 
   
@@ -21,7 +22,7 @@
   }
   
   .subtitle {
-    max-width: 75%;
+    max-width: 80%;
     margin: 0 auto 30px;
     font-size: clamp(1.1rem, 2vw, 2rem);
     line-height: 1.6;

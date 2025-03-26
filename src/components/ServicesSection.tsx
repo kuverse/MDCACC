@@ -90,7 +90,7 @@ const ServicesSection: React.FC = () => {
                 />
               </div>
               <div className={styles.overlay}>
-                <h2 style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)" }}>
+                <h2 style={{ fontSize: "clamp(1.2rem, 4vw, 2rem)" }}>
                   {card.title}
                 </h2>
                 <p style={{ padding: "10px", fontWeight: "100" }}>
@@ -102,7 +102,7 @@ const ServicesSection: React.FC = () => {
                   aria-label={`Learn more about ${card.title}`}
                 >
                   <FaLightbulb style={{ marginRight: "8px" }} />
-                  Learn More about {card.title}
+                  Learn More
                 </Link>
               </div>
             </m.div>
