@@ -105,7 +105,7 @@
   .hero {
     position: relative;
     width: 100%; /* Force full width of viewport */
-    min-height: 130vh; /* Force full height */
+    min-height: 120vh; /* Force full height */
     overflow: hidden;
     display: flex;
     align-items: center;
