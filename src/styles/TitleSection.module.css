@@ -28,6 +28,19 @@
     padding: 5px;
   }
   
+  .char {
+    display: inline-block;
+    transform-origin: bottom;
+  }
+  
+  /* Only animate when this class is present */
+  .animateWave {
+    animation: waveScale 0.6s ease-in-out forwards;
+    animation-iteration-count: 2;
+  }
+  
+
+
   @keyframes waveScale {
     0% {
       transform: scale(1);

@@ -76,7 +76,7 @@
 }
 
 .ctaButton:hover {
-  background-color: var(--border-color);
+  background-color: var(--text-muted);
   transform: scale(1.1);
   
 }

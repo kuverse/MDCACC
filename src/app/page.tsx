@@ -9,16 +9,11 @@ import MovieViewingComponent from "@/components/MovieComponent";
 import FAQSection from "@/components/FAQSection";
 import ServicesSection from "@/components/ServicesSection";
 import StreamBackground from "@/components/BackgroundDesign";
+import ElfsightLazy from "../components/ElfSlightLazy";
+
 import dynamic from "next/dynamic";
 
-const ElfsightWidget = dynamic(() => import("@/components/ElfSightGoogle"), {
-  ssr: false,
-  loading: () => (
-    <div style={{ height: "600px", textAlign: "center", padding: "40px" }}>
-      Loading reviews...
-    </div>
-  ),
-});
+
 
 const EstimatorPro = dynamic(() => import("@/components/EstimatorPro"), {
   ssr: false,
@@ -60,7 +55,7 @@ export default function Home() {
         </section>
 
         <section id="reviews">
-        <ElfsightWidget />
+        <ElfsightLazy />
         </section>
 
         <section id="estimator" style={{ position: "relative"}}>

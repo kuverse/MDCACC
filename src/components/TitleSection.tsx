@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import styles from "../styles/TitleSection.module.css";
 
 interface TitleSectionProps {
@@ -7,27 +9,36 @@ interface TitleSectionProps {
 }
 
 const TitleSection: React.FC<TitleSectionProps> = ({ title, subtitle }) => {
+  const [inView, setInView] = useState(false);
+
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true, amount: 0.5 }}
+      onViewportEnter={() => setInView(true)}
+    >
       <h2 className={styles.title}>
-  {title.split(" ").map((word, wordIndex) => (
-    <span key={wordIndex} style={{ display: "inline-block", marginRight: "5px" }}>
-      {word.split("").map((char, charIndex) => (
-        <span
-          key={charIndex}
-          className={styles.char}
-          style={{
-            animationDelay: `${(wordIndex * 0.3) + (charIndex * 0.05)}s`,
-          }}
-        >
-          {char}
-        </span>
-      ))}
-    </span>
-  ))}
-</h2>
+        {title.split(" ").map((word, wordIndex) => (
+          <span key={wordIndex} style={{ display: "inline-block", marginRight: "5px" }}>
+            {word.split("").map((char, charIndex) => (
+              <span
+                key={charIndex}
+                className={`${styles.char} ${inView ? styles.animateWave : ""}`}
+                style={{
+                  animationDelay: `${(wordIndex * 0.3) + (charIndex * 0.05)}s`,
+                }}
+              >
+                {char}
+              </span>
+            ))}
+          </span>
+        ))}
+      </h2>
       {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
-    </div>
+    </motion.div>
   );
 };
 
