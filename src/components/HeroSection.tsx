@@ -1,4 +1,3 @@
-"use client";
 import styles from "../styles/Hero.module.css";
 import Link from "next/link";
 import GoogleReviews from "../components/GoogleReviews";

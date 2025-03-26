@@ -52,7 +52,14 @@ const ServicesSection: React.FC = () => {
         alt="Tint It Pro house logo"
         width={200}
         height={80}
+        priority // 👈 important for LCP if it's above the fold
+        quality={90}
+        style={{
+          maxWidth: "100%",
+          height: "auto",
+        }}
       />
+
       <TitleSection
         title="Our Solutions"
         subtitle="From windows to countertops, we got you covered."
@@ -95,7 +102,7 @@ const ServicesSection: React.FC = () => {
                   aria-label={`Learn more about ${card.title}`}
                 >
                   <FaLightbulb style={{ marginRight: "8px" }} />
-                  Learn More
+                  Learn More about {card.title}
                 </Link>
               </div>
             </m.div>

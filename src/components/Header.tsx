@@ -33,12 +33,13 @@ const Header: React.FC = () => {
 
       {/* Desktop Navigation */}
       <nav className={styles.nav} aria-label="Main navigation">
-      <Link href="/#home" aria-label="Go to Home section">Home</Link>
-      <Link href="/#solutions" aria-label="View our Solutions">Solutions</Link>
-      <Link href="/#reviews" aria-label="Read customer Reviews">Reviews</Link>
-      <Link href="/#estimator" aria-label="Open Estimator Pro section">Estimator Pro</Link>
-      <Link href="/#faq" aria-label="View Frequently Asked Questions">FAQ</Link>
+      <Link href="/#home" aria-label="Navigate to the Home section">Home</Link>
+      <Link href="/#solutions" aria-label="Learn about the Solutions we offer">Solutions</Link>
+      <Link href="/#reviews" aria-label="Read what our customers are saying in Reviews">Reviews</Link>
+      <Link href="/#estimator" aria-label="Use our Estimator Pro to get a quote">Estimator Pro</Link>
+      <Link href="/#faq" aria-label="Frequently Asked Questions about our services">FAQ</Link>
     </nav>
+
 
 
       {/* Desktop Call to Action & Theme Toggle */}
@@ -77,12 +78,12 @@ const Header: React.FC = () => {
         </button>
 
         <nav className={styles.mobileNav} aria-label="Mobile navigation">
-        <Link href="/#home" aria-label="Go to Home section">Home</Link>
-        <Link href="/#solutions" aria-label="View our Solutions">Solutions</Link>
-        <Link href="/#reviews" aria-label="Read customer Reviews">Reviews</Link>
-        <Link href="/#estimator" aria-label="Open Estimator Pro section">Estimator Pro</Link>
-        <Link href="/#faq" aria-label="View Frequently Asked Questions">FAQ</Link>
-        </nav>
+        <Link href="/#home" aria-label="Navigate to the Home section">Home</Link>
+        <Link href="/#solutions" aria-label="Learn about the Solutions we offer">Solutions</Link>
+        <Link href="/#reviews" aria-label="Read what our customers are saying in Reviews">Reviews</Link>
+        <Link href="/#estimator" aria-label="Use our Estimator Pro to get a quote">Estimator Pro</Link>
+        <Link href="/#faq" aria-label="Frequently Asked Questions about our services">FAQ</Link>
+      </nav>
 
         {/* Mobile CTA */}
         <Link
