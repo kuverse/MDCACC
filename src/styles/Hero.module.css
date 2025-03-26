@@ -1,7 +1,6 @@
 .title {
   font-size: clamp(2.8rem, 4vw, 3.5rem);
   padding: 25px;
-  margin-bottom: 20px;
   font-weight: bold;
   line-height: 1.2;
   word-break: break-word;
@@ -61,14 +60,17 @@
     text-align: center;
     color: white;
     font-weight: 900;
-    animation: wigglePop 1.5s ease-in-out;
     display: inline-block;
-    transition: background 0.3s ease, transform 0.3s ease; /* Add this */
+    transition: background 0.3s ease, transform 0.3s ease;
   }
   
   .primaryButton:hover {
     background-color: var(--tertiary);
-    transform: scale(1.1); /* Increase size */
+    transform: scale(1.1);
+  }
+  
+  .animate {
+    animation: wigglePop 1.5s ease-in-out;
   }
   
   @keyframes wigglePop {
