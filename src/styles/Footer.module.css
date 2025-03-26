@@ -108,7 +108,8 @@
     display: flex;
     align-items: center;
     gap: 8px; /* space between icon and text */
-    justify-content: center; /* center in mobile, adjust if needed for desktop */
+    justify-content: center;
+    color: var(--secondary); /* center in mobile, adjust if needed for desktop */
   }
   
   .locationIcon {
