@@ -17,6 +17,15 @@ const Footer = () => {
   return (
     <footer>
       {/* Upper Section */}
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
+        <iframe
+          width="100%"
+          height="550px"
+          src="https://app.tintwiz.com/web/ce/q2qhvszp8cxjukdexllsugfkhh5dvi3h"
+          frameBorder="0"
+          style={{ border: "none" }}
+        ></iframe>
+      </div>
       <div className={styles.upperFooter}>
         {/* Logo */}
         <motion.div className={styles.logoBlock} {...floatUp}>
@@ -64,6 +73,7 @@ const Footer = () => {
           <SocialLinks size={25}/>
         </motion.div>
       </div>
+     
 
       {/* Bottom Section */}
       <motion.div className={styles.bottomFooter} {...floatUp}>

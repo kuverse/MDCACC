@@ -67,7 +67,6 @@ export default function Home() {
         <StreamBackground position="top" height="100px" variant="dramatic"/>
         <FAQSection />
         </section>
-
       </main>
     </div>
   );
