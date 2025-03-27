@@ -200,7 +200,7 @@ const EstimatorPro: React.FC = () => {
         </div>
           <h3 className={styles.ctaHeadline}>
             Know the Cost Before You Commit – <br></br>Get a Fast & Accurate Estimate!<br />
-            <span>(Fill out our quick estimator tool & get pricing in minutes!)</span>
+            <span>(Fill out our quick estimator pro tool & get pricing instantly!)</span>
           </h3>
 
           </>

@@ -2,9 +2,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Footer.module.css";
-import { FaYoutube, FaInstagram, FaFacebookF } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { motion } from "framer-motion";
+import SocialLinks from "./SocialLinks";
 
 const floatUp = {
   initial: { opacity: 0, y: 30 },
@@ -61,32 +61,7 @@ const Footer = () => {
         {/* Social Media Icons */}
         <motion.div className={styles.socialIconsBlock} {...floatUp}>
           <h4>Follow Us</h4>
-          <div className={styles.socialIcons}>
-            <a 
-              href="https://www.youtube.com/channel/UCxJ_WibdI_sia2RZ_wAIOMw" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Youtube Link"
-            >
-              <FaYoutube />
-            </a>
-            <a 
-              href="https://instagram.com/tintitpro" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Instagram Link"
-            >
-              <FaInstagram />
-            </a>
-            <a 
-              href="https://facebook.com/tintitpro" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Facebook Link"
-            >
-              <FaFacebookF />
-            </a>
-          </div>
+          <SocialLinks size={25}/>
         </motion.div>
       </div>
 

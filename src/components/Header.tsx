@@ -6,7 +6,8 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import styles from "../styles/Header.module.css";
 import ThemeToggle from "./ThemeToggle";
-import { FaClipboard, FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaClipboard}from "react-icons/fa";
+import SocialLinks from "./SocialLinks";
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -100,32 +101,7 @@ const Header: React.FC = () => {
 
         {/* Social Icons & Footer */}
         <div className={styles.mobileExtras}>
-          <div className={styles.socialIconsMobile}>
-            <a
-              href="https://www.youtube.com/channel/UCxJ_WibdI_sia2RZ_wAIOMw"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit our YouTube channel"
-            >
-              <FaYoutube size={20} />
-            </a>
-            <a
-              href="https://instagram.com/tintitpro"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit our Instagram profile"
-            >
-              <FaInstagram size={20} />
-            </a>
-            <a
-              href="https://facebook.com/tintitpro"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit our Facebook page"
-            >
-              <FaFacebookF size={20} />
-            </a>
-          </div>
+         <SocialLinks />
           <p style={{ fontSize: "15px", marginTop: "auto", textAlign: "center", paddingBottom: "25px" }}>
             Tint It Pro ©2025
           </p>
