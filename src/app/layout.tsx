@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import ThemeProviderWrapper from "../components/ThemeProviderWrapper";
+import ThemeProviderWrapper from "../util/ThemeProviderWrapper";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/components/Header/Header";
+//import Footer from "@/components/Footer/Footer";
 import localFont from "next/font/local";
+import Footer2 from "@/components/Footer/Footer2";
 
 
 const interFontBold = localFont({
@@ -22,24 +23,24 @@ const interFontThin = localFont({
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tintitpro.netlify.app"),
+  metadataBase: new URL("http://localhost:3000/"),
   title: {
-    default: "Tint it Pro",
-    template: "%s | Tint it Pro",
+    default: "Website Name",
+    template: "%s | title",
   },
-  description: "We are the best at installing residential and commercial window tint and marble protection films in Calgary and area.",
-  keywords: ["window tint", "marble protection", "tuffskin", "decorative film", "car tint", "Tint it Pro", "Calgary"],
-  authors: [{ name: "Tint it Pro", url: "https://tintitpro.netlify.app" }],
+  description: "",
+  keywords: ["", "", "", "", "", "", ""],
+  authors: [{ name: "", url: "" }],
   openGraph: {
-    title: "Tint it Pro",
-    description: "We are the best at installing window tint and marble protection films.",
-    url: "https://tintitpro.netlify.app",
-    siteName: "Tint it Pro",
+    title: "",
+    description: "",
+    url: "",
+    siteName: "",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://tintitpro.netlify.app/images/logo.png", // Make sure this image exists and is optimized
+        url: "https://tintitpro.netlify.app/images/logo.png",
         width: 1200,
         height: 630,
         alt: "Tint it Pro - Window Tint & Protection",
@@ -51,10 +52,10 @@ export const metadata: Metadata = {
     title: "Tint it Pro",
     description: "We are the best at installing window tint and marble protection films.",
     images: ["https://tintitpro.netlify.app/images/logo.png"],
-    creator: "@tintitpro", // Optional if you have a Twitter handle
+    creator: "@tintitpro",
   },
   icons: {
-    icon: "/favicon.ico",           // Normal favicon
+    icon: "/favicon.ico",
   },
   alternates: {
     canonical: "https://tintitpro.netlify.app",
@@ -72,7 +73,7 @@ export default function RootLayout({
         <ThemeProviderWrapper>  
           <Header />        
           {children}
-          <Footer />
+          <Footer2 />
         </ThemeProviderWrapper>
       </body>
     </html>

@@ -1,0 +1,89 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px;
+  background: var(--background);
+}
+
+.heroContent {
+  max-width: 1200px;
+  text-align: center;
+}
+
+.locationWrapper {
+  margin-bottom: 20px;
+}
+
+.locationTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--forground);
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--forground);
+}
+
+.subtitleHighlight {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 1rem;
+  margin-bottom: 40px;
+  color: var(--forground);
+  line-height: 1.5;
+}
+
+.ctaButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 30px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.primaryButton:hover {
+  transform: scale(1.05);
+  background-color: #005bb5;
+}
+
+.animate {
+  animation: buttonFade 1s ease-out;
+}
+
+@keyframes buttonFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.buttonIcon {
+  font-size: 1.2rem;
+}

@@ -1,0 +1,58 @@
+.section {
+    padding: 80px 20px;
+    background-color: var(--background);
+    color: var(--foreground);
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* Responsive animated grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+    margin: 40px auto 0;
+    padding: 20px;
+  }
+  
+  /* Card with motion support */
+  .card {
+    background-color: var(--tertiary);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Optional icon styling (if used) */
+  .icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: var(--primary);
+  }
+  
+  .card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--foreground);
+  }
+  
+  .card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+  

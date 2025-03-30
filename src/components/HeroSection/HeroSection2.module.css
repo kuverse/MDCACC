@@ -1,0 +1,102 @@
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --primary: #4186F3;
+    --secondary: #656565;
+  }
+  
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--foreground);
+  }
+  
+  /* Background Animation Container */
+  .backgroundAnimation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  /* Bubble Styling */
+  .bubble {
+    position: absolute;
+    bottom: -150px;
+    border-radius: 50%;
+    animation: floatBubble 10s linear infinite;
+  }
+  
+  /* Pseudo-element for a soft, liquid-like bubble */
+  .bubble::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bubble-color);
+    border-radius: 50%;
+    filter: blur(15px);
+    opacity: 0.8;
+  }
+  
+  /* Keyframes for floating bubbles */
+  @keyframes floatBubble {
+    0% {
+      transform: translateY(0) scale(0.8);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(-60vh) scale(1);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translateY(-120vh) scale(0.8);
+      opacity: 0;
+    }
+  }
+  
+  /* Content Styling */
+  .content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+  }
+  
+  .ctaButton {
+    background-color: var(--primary);
+    color: var(--foreground);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ctaButton:hover {
+    background-color: var(--secondary);
+  }
+  

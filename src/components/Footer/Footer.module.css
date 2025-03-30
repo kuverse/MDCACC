@@ -1,0 +1,165 @@
+/* Upper Footer */
+.upperFooter {
+  background-color: var(--tertiary);
+  color: var(--foreground);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+}
+
+/* Each Block Styling */
+.logoBlock,
+.descriptionBlock,
+.mapBlock,
+.hoursBlock,
+.socialIconsBlock {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Logo */
+.logo img {
+  width: auto;
+  height: 140px;
+  object-fit: contain;
+  filter: invert(0%); /* Default: black logo */
+  transition: filter 0.3s ease;
+  padding: 15px;
+}
+
+/* Dark Mode */
+.dark .logo img {
+  filter: invert(100%); /* White logo in dark mode */
+}
+
+/* Description */
+.description {
+  max-width: 350px;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 10px;
+  min-width: 200px;
+}
+
+/* Social Icons */
+.socialIcons {
+  display: flex;
+  gap: 25px;
+}
+
+.socialIcons a {
+  color: var(--foreground);
+  font-size: 30px;
+  transition: color 0.3s ease-in-out;
+}
+
+.socialIcons a:hover {
+  color: var(--primary);
+}
+
+/* Hours Block */
+.hoursBlock p {
+  margin: 0;
+  font-size: 14px;
+  min-width: 200px;
+}
+
+/* Map Block */
+.mapBlock iframe {
+  border-radius: 8px;
+  width: 320px;
+  height: 190px;
+}
+
+/* Bottom Footer */
+.bottomFooter {
+  background-color: var(--primary);
+  color: var(--tertiary);
+  text-align: center;
+  padding: 12px 10px;
+}
+
+.bottomLinks {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+  flex-wrap: wrap; /* Allow links to wrap if space is tight */
+}
+
+.bottomLinks a {
+  color: var(--text-button);
+  font-size: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: font-size 0.3s ease;
+}
+
+.bottomLinks a:hover {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.copyText {
+  font-size: 12px;
+  color: white;
+}
+
+/* Location Row */
+.locationRow {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  justify-content: center;
+  color: var(--secondary);
+}
+
+.locationIcon {
+  font-size: 20px;
+  color: var(--foreground);
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+  .upperFooter {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    gap: 30px;
+  }
+
+  .logoBlock,
+  .descriptionBlock,
+  .mapBlock,
+  .hoursBlock,
+  .socialIconsBlock {
+    align-items: flex-start;
+  }
+
+  .mapBlock iframe {
+    width: 200px;
+    height: 150px;
+  }
+}
+
+/* Medium Screens: Adjust gaps and font sizes to avoid cutting out links */
+@media (max-width: 1024px) {
+  .bottomLinks {
+    gap: 10px;
+  }
+
+  .bottomLinks a {
+    font-size: 12px;
+  }
+
+  .description,
+  .hoursBlock p {
+    font-size: 13px;
+  }
+}

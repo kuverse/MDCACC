@@ -1,0 +1,36 @@
+.carouselWrapper {
+  overflow: hidden;
+  padding: 20px;
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 20px;
+  animation: scroll 20s linear infinite;
+}
+
+/* Pause scrolling when hovering over the carousel */
+.carouselTrack:hover {
+  animation-play-state: paused;
+}
+
+/* Keyframe animation for scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Logo item container with hover enlargement */
+.logoItem {
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logoItem:hover {
+  transform: scale(1.2);
+}

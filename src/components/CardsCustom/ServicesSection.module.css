@@ -1,0 +1,106 @@
+.servicesSection {
+    padding: 55px 5px;
+    text-align: center;
+  }
+  
+
+  
+  .cardContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px;
+    justify-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  .card {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px;
+    will-change: transform, opacity;
+
+  }
+  .card p {
+    padding: 10px;
+    font-weight: 100;
+    font-family: 'Inter', sans-serif; /* or whichever thin font you're using */
+  }
+  
+  .imageWrapper {
+    width: 100%;
+    height: auto;
+  }
+  
+  .cardImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 40px; /* Anchor at the bottom */
+    left: 0;   /* Full width start */
+    right: 0;  /* Full width end */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px;
+    z-index: 2;
+    border-radius: 0px;
+    width: 100%; /* Full width */
+    text-align: center; /* Center the text */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  
+  .learnMore {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .learnMore:hover {
+    background-color: var(--accent);
+    transform: scale(1.05);
+  }
+  
+  .learnMore2 {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--secondary);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+  .learnMore2:hover {
+    background-color: var(--accent);
+    transform: scale(1.05);
+  }
+
+  @media (min-width: 900px) {
+    .cardContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  

@@ -1,0 +1,18 @@
+.socialIcons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .iconLink {
+    color: inherit;
+    transition: transform 0.3s ease;
+    padding: 10px;
+  }
+  
+  .iconLink:hover {
+    transform: scale(1.2);
+    color: var(--secondary); /* Or your accent color */
+  }
+  

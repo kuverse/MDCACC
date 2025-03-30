@@ -1,0 +1,36 @@
+.toggleButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Base icon styling with a smooth transition */
+  .icon {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  /* Define keyframes for the toggle animation */
+  @keyframes iconToggle {
+    0% {
+      transform: scale(0.8) rotate(0deg);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1) rotate(180deg);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1) rotate(360deg);
+      opacity: 1;
+    }
+  }
+  
+  /* Apply the keyframe animation */
+  .animate {
+    animation: iconToggle 0.5s ease-in-out;
+  }
+  
