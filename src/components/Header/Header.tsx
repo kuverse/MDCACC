@@ -93,7 +93,7 @@ const Header: React.FC = () => {
         {/* Social Icons & Footer */}
         <div className={styles.mobileExtras}>
           <SocialLinks />
-          <p className={styles.footerText}>Company ©2025</p>
+          <p className={styles.footerText}>MD Cardiac Anesthesiology & Critical Care ©2025</p>
         </div>
       </div>
     </header>

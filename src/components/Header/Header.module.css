@@ -256,4 +256,7 @@
   .mobileActions {
     display: none;
   }
+  .footerText{
+    text-align: center;
+  }
 }
