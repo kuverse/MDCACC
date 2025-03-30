@@ -14,7 +14,7 @@ const navLinksDesktop = [
   { href: "/#home", label: "Home", ariaLabel: "Navigate to the Home section" },
   { href: "/#about", label: "About Us", ariaLabel: "Navigate to about us section." },
   { href: "/#faq", label: "FAQ", ariaLabel: "Navigate to FAQ section." },
-  { href: "/#services", label: "Services", ariaLabel: "Learn about the Solutions we offer" },
+  { href: "/botox", label: "Services", ariaLabel: "Learn about the Solutions we offer" },
 ];
 
 const navLinksMobile = [

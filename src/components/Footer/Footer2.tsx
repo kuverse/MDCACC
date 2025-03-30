@@ -67,11 +67,11 @@ const Footer: React.FC = () => {
         </div>
 
         <div className={styles.legal}>
-          <p>© {new Date().getFullYear()} YourCompanyName • All Rights Reserved</p>
+          <p>© {new Date().getFullYear()} MD Cardiac Anesthesia & Critical Care</p>
           <div>
-            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="https://policies.google.com/privacy?hl=en-US">Privacy Policy</Link>
             <span>•</span>
-            <Link href="/terms-of-use">Terms of Service</Link>
+            <Link href="https://policies.google.com/terms?hl=en-US">Terms of Service</Link>
          
           </div>
         </div>
