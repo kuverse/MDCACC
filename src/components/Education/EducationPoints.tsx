@@ -44,7 +44,7 @@ const educationPoints = [
 const AboutEducation: React.FC = () => {
   return (
     <section className={styles.educationSection}>
-        <TitleSection title="What do we do?" subtitle="We put our love into critical patient care." />
+        <TitleSection title="What do we do?" subtitle="We put our love into critical care." />
       <div className={styles.grid}>
         {educationPoints.map((point, i) => (
           <motion.div
