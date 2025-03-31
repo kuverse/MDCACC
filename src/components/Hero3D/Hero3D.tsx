@@ -7,7 +7,7 @@ import {
   ScrollControls,
   OrbitControls,
 } from "@react-three/drei";
-import styles from "./Hero3D.module.css"; // Optional styling
+import styles from "./Hero3D.module.css";
 
 const ScrollCube: React.FC<{ isInteracting: boolean }> = ({ isInteracting }) => {
   const meshRef = useRef<THREE.Mesh>(null!);
@@ -15,7 +15,6 @@ const ScrollCube: React.FC<{ isInteracting: boolean }> = ({ isInteracting }) => 
 
   useFrame(() => {
     if (meshRef.current && !isInteracting) {
-      // Auto-rotate only when not in interactive mode
       meshRef.current.rotation.y = scroll.offset * Math.PI * 2;
     }
   });
@@ -33,16 +32,18 @@ const Hero3DSection: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <Canvas style={{ height: "100vh" }}>
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[0, 5, 5]} />
+      <div className={`${styles.canvasWrapper} ${!isInteracting ? styles.inactive : ""}`}>
+        <Canvas style={{ height: "100vh" }}>
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[0, 5, 5]} />
 
-        <ScrollControls pages={2}>
-          <ScrollCube isInteracting={isInteracting} />
-        </ScrollControls>
+          <ScrollControls pages={2}>
+            <ScrollCube isInteracting={isInteracting} />
+          </ScrollControls>
 
-        {isInteracting && <OrbitControls enableZoom={false} />}
-      </Canvas>
+          {isInteracting && <OrbitControls enableZoom={false} />}
+        </Canvas>
+      </div>
 
       <button
         className={styles.toggleButton}

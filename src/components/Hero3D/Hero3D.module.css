@@ -7,10 +7,10 @@
     z-index: 0;
   }
   
-  /* Disable pointer events only on small screens */
   @media (max-width: 768px) {
-    .canvasWrapper {
+    .canvasWrapper.inactive {
       pointer-events: none;
+      touch-action: none;
     }
   }
   
@@ -33,24 +33,19 @@
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    max-width: 90%;
+    white-space: nowrap;
   }
   
   .toggleButton:hover {
     background: #2a64bd;
   }
   
-  .heroWrapper {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  
   .interactButton {
     position: absolute;
     bottom: 75px;
     left: 50%;
+    transform: translateX(-50%);
     background-color: var(--primary);
     color: var(--text-button);
     padding: 12px 20px;
@@ -61,11 +56,11 @@
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     z-index: 20;
+    max-width: 90%;
+    white-space: nowrap;
   }
   
   .interactButton:hover {
     color: var(--background);
   }
-  
-  
   
