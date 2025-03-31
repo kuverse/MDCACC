@@ -20,17 +20,17 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ size = 25 }) => {
       icon: <FaYoutube size={size} />,
     },
     {
-      href: "https://instagram.com/tintitpro",
+      href: "https://instagram.com/",
       label: "Visit our Instagram profile",
       icon: <FaInstagram size={size} />,
     },
     {
-      href: "https://facebook.com/tintitpro",
+      href: "https://facebook.com/",
       label: "Visit our Facebook page",
       icon: <FaFacebookF size={size} />,
     },
     {
-      href: "https://x.com/tintitpro",
+      href: "https://x.com/",
       label: "Visit our X (Twitter) profile",
       icon: <FaXTwitter size={size} />,
     },

@@ -37,10 +37,10 @@ const MovieViewingComponent: React.FC<MovieViewingComponentProps> = ({
     embedUrl,
     publisher: {
       "@type": "Organization",
-      name: "Tint It Pro",
+      name: "MD Cardiac Anesthesia & Critical Care",
       logo: {
         "@type": "ImageObject",
-        url: "https://tintitpro.netlify.app/images/logo.png",
+        url: "https://mdcacc.netlify.app/images/mainLogo.png",
       },
     },
   };

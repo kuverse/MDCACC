@@ -32,7 +32,7 @@ const Header: React.FC = () => {
     <header className={styles.header}>
       {/* Logo */}
       <div className={styles.logo}>
-        <Link href="/" aria-label="Tint it Pro Home">
+        <Link href="/" aria-label="MDCACC">
           <Image
             src="/images/mainLogo.png"
             alt="Company Logo"

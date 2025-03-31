@@ -25,7 +25,7 @@ const interFontThin = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000/"),
   title: {
-    default: "Website Name",
+    default: "MDCACC",
     template: "%s | title",
   },
   description: "",
@@ -40,25 +40,25 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://tintitpro.netlify.app/images/logo.png",
+        url: "https://mdcacc.netlify.app/images/logo.png",
         width: 1200,
         height: 630,
-        alt: "Tint it Pro - Window Tint & Protection",
+        alt: "",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tint it Pro",
-    description: "We are the best at installing window tint and marble protection films.",
-    images: ["https://tintitpro.netlify.app/images/logo.png"],
-    creator: "@tintitpro",
+    title: "MDCACC",
+    description: "Cardiac Anesthesia and Critical Care",
+    images: [""],
+    creator: "@mdcacc",
   },
   icons: {
     icon: "/favicon.ico",
   },
   alternates: {
-    canonical: "https://tintitpro.netlify.app",
+    canonical: "https://mdcacc.netlify.app",
   },
 };
 
