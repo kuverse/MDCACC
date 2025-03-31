@@ -23,7 +23,7 @@ const interFontThin = localFont({
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000/"),
+  metadataBase: new URL("https://mdcacc.netlify.app"),
   title: {
     default: "MDCACC",
     template: "%s | title",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://mdcacc.netlify.app/images/logo.png",
+        url: "https://mdcacc.netlify.app/images/mainLogo.png",
         width: 1200,
         height: 630,
         alt: "",

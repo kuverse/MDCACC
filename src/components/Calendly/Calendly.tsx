@@ -25,12 +25,10 @@ const CalendlyInlineWidget: React.FC = () => {
   useEffect(() => {
     if (!scriptLoaded) return;
 
-    const a1 = searchParams.get("a1") || "";
-    const a2 = searchParams.get("a2") || "";
+    //const a1 = searchParams.get("a1") || "";
+    //const a2 = searchParams.get("a2") || "";
 
-    const calendlyUrl = `https://calendly.com/tinterpro/45min?a1=${encodeURIComponent(
-      a1
-    )}&a2=${encodeURIComponent(a2)}`;
+    const calendlyUrl = ``;
 
     if (widgetRef.current && window.Calendly) {
       // Clear previous iframe if any (important!)
